@@ -6,22 +6,16 @@ using System.Collections;
 public class UniversalTrigger : MonoBehaviour
 {
     [Header("Core Settings")]
-    public bool requiresInput = true;              // Press E to trigger
-    public bool enableTeleport = false;            // Allows teleporting through trigger
+    public bool requiresInput = true;
+    public bool enableTeleport = false;
 
     [Header("Fade Settings")]
-    public Image fadeImage;                        // Black fade UI image
-    [Tooltip("How long the fade in/out lasts.")]
+    public Image fadeImage;
     public float fadeDuration = 1f;
 
     [Header("Timing Control")]
-    [Tooltip("Delay before teleport happens (after fade to black).")]
     public float beforeTeleportDelay = 0.3f;
-
-    [Tooltip("Delay after teleport, before cutscene starts.")]
     public float afterTeleportDelay = 0.5f;
-
-    [Tooltip("Delay after cutscene finishes, before fade out.")]
     public float afterCutsceneDelay = 0.3f;
 
     [Header("Teleport Settings")]
@@ -31,23 +25,20 @@ public class UniversalTrigger : MonoBehaviour
     public bool playCutscene = false;
     public PlayableDirector director;
     public bool autoFadeOutAfterCutscene = true;
-    [Tooltip("If enabled, the cutscene will only play the first time. Teleporting still works.")]
-    public bool playCutsceneOnce = false; // ✅ NEW FEATURE
+    public bool playCutsceneOnce = false;
 
     private Transform player;
     private bool isPlayerNearby = false;
     private bool isTransitioning = false;
-    private bool hasPlayedCutscene = false; // ✅ Track if cutscene has been played
+    private bool hasPlayedCutscene = false;
     private bool hasJustTeleported = false;
 
     private void Start()
     {
-        // Auto-detect player
         GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
         if (playerObj != null)
             player = playerObj.transform;
 
-        // Ensure fade starts invisible
         if (fadeImage != null)
         {
             Color c = fadeImage.color;
@@ -72,29 +63,29 @@ public class UniversalTrigger : MonoBehaviour
         isTransitioning = true;
         hasJustTeleported = true;
 
-        // Fade to black
         if (fadeImage)
             yield return StartCoroutine(Fade(0, 1));
 
-        // Wait before teleport
         yield return new WaitForSeconds(beforeTeleportDelay);
 
-        // Teleport player
+        // ✅ FORCE teleport to exact XYZ of the destination
         if (enableTeleport && teleportDestination && player)
         {
             CharacterController cc = player.GetComponent<CharacterController>();
             if (cc) cc.enabled = false;
 
-            player.position = teleportDestination.position;
-            player.rotation = teleportDestination.rotation;
+            // Set exact position and rotation (no offset)
+            player.SetPositionAndRotation(
+                teleportDestination.position,
+                teleportDestination.rotation
+            );
 
+            yield return null; // Give physics one frame to update
             if (cc) cc.enabled = true;
         }
 
-        // Wait before cutscene
         yield return new WaitForSeconds(afterTeleportDelay);
 
-        // ✅ Play cutscene (only once if chosen)
         if (playCutscene && director)
         {
             if (!playCutsceneOnce || (playCutsceneOnce && !hasPlayedCutscene))
@@ -105,14 +96,11 @@ public class UniversalTrigger : MonoBehaviour
             }
         }
 
-        // Wait after cutscene
         yield return new WaitForSeconds(afterCutsceneDelay);
 
-        // Fade back to normal
         if (fadeImage && (!playCutscene || autoFadeOutAfterCutscene))
             yield return StartCoroutine(Fade(1, 0));
 
-        // ✅ Prevent immediate retrigger spam
         yield return new WaitUntil(() => !isPlayerNearby);
         hasJustTeleported = false;
         isTransitioning = false;

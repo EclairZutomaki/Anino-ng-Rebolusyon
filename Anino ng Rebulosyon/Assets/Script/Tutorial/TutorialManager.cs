@@ -1,32 +1,28 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 
 public class TutorialManager : MonoBehaviour
 {
     [Header("Fade Settings")]
-    public Image fadeImage;                      // Black fade UI panel
-    [Tooltip("Duration of screen fade-in at game start.")]
+    public Image fadeImage;
     public float fadeDuration = 1f;
-    [Tooltip("Delay before fade starts when game loads.")]
     public float startDelay = 0.5f;
 
-    [Header("Mouse Tutorial Settings")]
-    public GameObject mouseTutorialUI;           // Assign Mouse tutorial UI
-    [Tooltip("Delay before mouse tutorial appears (after fade).")]
+    [Header("Tutorial UIs")]
+    public GameObject mouseTutorialUI;
     public float mouseTutorialDelay = 0.5f;
-    [Tooltip("How long the mouse tutorial stays visible.")]
     public float mouseTutorialDuration = 5f;
 
-    [Header("Movement Tutorial Settings")]
-    public GameObject movementTutorialUI;        // Assign Movement tutorial UI
-    [Tooltip("Delay before movement tutorial appears (after mouse tutorial ends).")]
+    public GameObject movementTutorialUI;
     public float movementTutorialDelay = 0.5f;
-    [Tooltip("How long the movement tutorial stays visible.")]
     public float movementTutorialDuration = 5f;
 
+    [Header("Extra Tutorials")]
+    public GameObject runTutorialUI; // 🏃‍♂️ SHIFT to run
+    public float runTutorialDuration = 5f;
+
     [Header("UI Fade Settings")]
-    [Tooltip("Duration for tutorial UI fade in/out.")]
     public float uiFadeDuration = 0.5f;
 
     [Header("Debug")]
@@ -34,52 +30,62 @@ public class TutorialManager : MonoBehaviour
 
     private void Start()
     {
-        // Set initial states
-        if (fadeImage != null)
+        // Reset visuals
+        if (fadeImage)
         {
             Color c = fadeImage.color;
-            c.a = 1f; // Start fully black
+            c.a = 1f;
             fadeImage.color = c;
         }
 
+        HideAllTutorials();
+        StartCoroutine(TutorialSequence());
+    }
+
+    private void HideAllTutorials()
+    {
         if (mouseTutorialUI) mouseTutorialUI.SetActive(false);
         if (movementTutorialUI) movementTutorialUI.SetActive(false);
-
-        // Start sequence
-        StartCoroutine(TutorialSequence());
+        if (runTutorialUI) runTutorialUI.SetActive(false);
     }
 
     private IEnumerator TutorialSequence()
     {
         yield return new WaitForSeconds(startDelay);
 
-        // Fade screen from black
-        if (fadeImage) yield return StartCoroutine(FadeImage(fadeImage, 1f, 0f, fadeDuration));
+        // Fade in from black
+        if (fadeImage)
+            yield return StartCoroutine(FadeImage(fadeImage, 1f, 0f, fadeDuration));
 
-        // Wait then show mouse tutorial
+        // Mouse tutorial
         yield return new WaitForSeconds(mouseTutorialDelay);
-        if (mouseTutorialUI)
-        {
-            if (debugLogs) Debug.Log("Showing Mouse Tutorial");
-            yield return StartCoroutine(FadeCanvas(mouseTutorialUI, true));
-            yield return new WaitForSeconds(mouseTutorialDuration);
-            yield return StartCoroutine(FadeCanvas(mouseTutorialUI, false));
-        }
+        yield return StartCoroutine(ShowTutorial(mouseTutorialUI, mouseTutorialDuration));
 
-        // Wait then show movement tutorial
+        // Movement tutorial
         yield return new WaitForSeconds(movementTutorialDelay);
-        if (movementTutorialUI)
-        {
-            if (debugLogs) Debug.Log("Showing Movement Tutorial");
-            yield return StartCoroutine(FadeCanvas(movementTutorialUI, true));
-            yield return new WaitForSeconds(movementTutorialDuration);
-            yield return StartCoroutine(FadeCanvas(movementTutorialUI, false));
-        }
-
-        if (debugLogs) Debug.Log("Tutorial sequence finished!");
+        yield return StartCoroutine(ShowTutorial(movementTutorialUI, movementTutorialDuration));
     }
 
-    // Smooth fade for black screen
+    // 🧠 Generic reusable function to show any tutorial UI
+    public IEnumerator ShowTutorial(GameObject ui, float duration)
+    {
+        if (ui == null) yield break;
+
+        if (debugLogs) Debug.Log($"Showing tutorial: {ui.name}");
+
+        yield return StartCoroutine(FadeCanvas(ui, true));
+        yield return new WaitForSeconds(duration);
+        yield return StartCoroutine(FadeCanvas(ui, false));
+    }
+
+    // 👇 This is for triggering tutorials anytime (like after subtitles)
+    public void TriggerRunTutorial()
+    {
+        if (runTutorialUI != null)
+            StartCoroutine(ShowTutorial(runTutorialUI, runTutorialDuration));
+    }
+
+    // Smooth fade for screen image
     private IEnumerator FadeImage(Image img, float startAlpha, float endAlpha, float duration)
     {
         float elapsed = 0f;
@@ -97,16 +103,13 @@ public class TutorialManager : MonoBehaviour
         img.color = c;
     }
 
-    // Smooth fade for tutorial UI (using CanvasGroup)
+    // Smooth fade for any tutorial UI
     private IEnumerator FadeCanvas(GameObject ui, bool fadeIn)
     {
-        if (!ui) yield break;
-
         CanvasGroup cg = ui.GetComponent<CanvasGroup>();
         if (!cg) cg = ui.AddComponent<CanvasGroup>();
 
         ui.SetActive(true);
-
         float start = fadeIn ? 0f : 1f;
         float end = fadeIn ? 1f : 0f;
         float elapsed = 0f;
