@@ -3,7 +3,7 @@ using UnityEngine.UI; // Needed for Button
 
 public class BagManager : MonoBehaviour
 {
-    [Header("Bag UI Panels")]
+    [Header("UI PANELS")]
     public GameObject bagUI;            // Main Bag container
     public GameObject documentsPanel;   // Documents tab panel
     public GameObject mapPanel;         // Map tab panel
