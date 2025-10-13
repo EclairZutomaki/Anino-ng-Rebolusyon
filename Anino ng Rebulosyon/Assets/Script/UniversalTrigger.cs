@@ -6,38 +6,32 @@ using System.Collections;
 public class UniversalTrigger : MonoBehaviour
 {
     [Header("Core Settings")]
-    public bool requiresInput = true;
-    public bool enableTeleport = false;
+    public bool requiresInput = true;              // Press E to trigger
+    public bool playOnlyOnce = false;              // Optional one-time trigger
 
     [Header("Fade Settings")]
-    public Image fadeImage;
+    public Image fadeImage;                        // Black fade UI image
     public float fadeDuration = 1f;
-
-    [Header("Timing Control")]
-    public float beforeTeleportDelay = 0.3f;
-    public float afterTeleportDelay = 0.5f;
-    public float afterCutsceneDelay = 0.3f;
+    public float waitBeforeTeleport = 0.3f;
 
     [Header("Teleport Settings")]
-    public Transform teleportDestination;
+    public bool enableTeleport = false;            // Optional teleport
+    public Transform teleportDestination;          // Where player goes
 
     [Header("Cutscene Settings")]
-    public bool playCutscene = false;
-    public PlayableDirector director;
+    public bool playCutscene = false;              // Optional Timeline
+    public PlayableDirector director;              // The cutscene timeline
     public bool autoFadeOutAfterCutscene = true;
-    public bool playCutsceneOnce = false;
 
     private Transform player;
     private bool isPlayerNearby = false;
+    private bool hasTriggered = false;
     private bool isTransitioning = false;
-    private bool hasPlayedCutscene = false;
-    private bool hasJustTeleported = false;
 
     private void Start()
     {
         GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
-        if (playerObj != null)
-            player = playerObj.transform;
+        if (playerObj != null) player = playerObj.transform;
 
         if (fadeImage != null)
         {
@@ -49,9 +43,9 @@ public class UniversalTrigger : MonoBehaviour
 
     private void Update()
     {
-        if (isTransitioning) return;
+        if (isTransitioning || hasTriggered && playOnlyOnce) return;
 
-        if (isPlayerNearby && !hasJustTeleported)
+        if (isPlayerNearby)
         {
             if (!requiresInput || Input.GetKeyDown(KeyCode.E))
                 StartCoroutine(TriggerSequence());
@@ -61,48 +55,35 @@ public class UniversalTrigger : MonoBehaviour
     private IEnumerator TriggerSequence()
     {
         isTransitioning = true;
-        hasJustTeleported = true;
+        hasTriggered = true;
 
-        if (fadeImage)
-            yield return StartCoroutine(Fade(0, 1));
+        // Fade to black
+        if (fadeImage) yield return StartCoroutine(Fade(0, 1));
+        yield return new WaitForSeconds(waitBeforeTeleport);
 
-        yield return new WaitForSeconds(beforeTeleportDelay);
-
-        // ✅ FORCE teleport to exact XYZ of the destination
+        // Teleport (if enabled)
         if (enableTeleport && teleportDestination && player)
         {
             CharacterController cc = player.GetComponent<CharacterController>();
             if (cc) cc.enabled = false;
 
-            // Set exact position and rotation (no offset)
-            player.SetPositionAndRotation(
-                teleportDestination.position,
-                teleportDestination.rotation
-            );
+            player.position = teleportDestination.position;
+            player.rotation = teleportDestination.rotation;
 
-            yield return null; // Give physics one frame to update
             if (cc) cc.enabled = true;
         }
 
-        yield return new WaitForSeconds(afterTeleportDelay);
-
+        // Play cutscene (if available)
         if (playCutscene && director)
         {
-            if (!playCutsceneOnce || (playCutsceneOnce && !hasPlayedCutscene))
-            {
-                hasPlayedCutscene = true;
-                director.Play();
-                yield return new WaitUntil(() => director.state != PlayState.Playing);
-            }
+            director.Play();
+            yield return new WaitUntil(() => director.state != PlayState.Playing);
         }
 
-        yield return new WaitForSeconds(afterCutsceneDelay);
-
+        // Fade back in
         if (fadeImage && (!playCutscene || autoFadeOutAfterCutscene))
             yield return StartCoroutine(Fade(1, 0));
 
-        yield return new WaitUntil(() => !isPlayerNearby);
-        hasJustTeleported = false;
         isTransitioning = false;
     }
 
