@@ -12,13 +12,12 @@ public class TeleportFade : MonoBehaviour
     public float waitBeforeTeleport = 0.3f;
 
     [Header("Cutscene Settings")]
-    [Tooltip("If enabled, the Timeline will play after teleport.")]
     public bool playCutscene = false;
     public PlayableDirector timelineDirector;
-    [Tooltip("If true, cutscene plays only the first time this trigger is used.")]
     public bool playCutsceneOnce = false;
     private bool hasPlayedCutscene = false;
 
+    private GameObject playerObj;
     private Transform player;
     private bool isTouching = false;
     private bool isTransitioning = false;
@@ -26,10 +25,11 @@ public class TeleportFade : MonoBehaviour
 
     void Start()
     {
-        GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
+        playerObj = GameObject.FindGameObjectWithTag("Player");
         if (playerObj != null)
             player = playerObj.transform;
 
+        // Start transparent
         if (fadeImage != null)
         {
             Color c = fadeImage.color;
@@ -51,51 +51,64 @@ public class TeleportFade : MonoBehaviour
         isTransitioning = true;
         hasJustTeleported = true;
 
-        // Fade to black
+        // 1️⃣ Fade to Black
         yield return StartCoroutine(Fade(0, 1));
         yield return new WaitForSeconds(waitBeforeTeleport);
 
-        // --- TELEPORT ---
+        // 2️⃣ Teleport while black
         if (player != null && teleportDestination != null)
         {
             CharacterController cc = player.GetComponent<CharacterController>();
-            if (cc != null) cc.enabled = false;
+            if (cc) cc.enabled = false;
 
             player.position = teleportDestination.position;
             player.rotation = teleportDestination.rotation;
 
-            if (cc != null) cc.enabled = true;
+            if (cc) cc.enabled = true;
         }
 
-        // --- CUTSCENE ---
+        // 3️⃣ Handle Cutscene or Normal
         if (playCutscene && timelineDirector != null)
         {
             if (!playCutsceneOnce || (playCutsceneOnce && !hasPlayedCutscene))
             {
                 hasPlayedCutscene = true;
 
-                // ✅ Fade back in BEFORE the cutscene plays (so you can see it)
+                // Disable player right before fade-in
+                if (playerObj) playerObj.SetActive(false);
+
+                // Keep screen black while teleport settles
+                yield return new WaitForSeconds(0.3f);
+
+                // ✨ Start cutscene THEN fade in
+                timelineDirector.Play();
+                yield return new WaitForSeconds(0.3f);
                 yield return StartCoroutine(Fade(1, 0));
 
-                timelineDirector.Play();
-
-                // Wait until timeline finishes
+                // Wait for cutscene to finish
                 yield return new WaitUntil(() => timelineDirector.state != PlayState.Playing);
 
-                // Optional: fade out again after cutscene if you want smooth transition
+                // 4️⃣ Fade out at end of cutscene -> re-enable player
                 yield return StartCoroutine(Fade(0, 1));
+                if (playerObj) playerObj.SetActive(true);
+                yield return new WaitForSeconds(0.2f);
+                yield return StartCoroutine(Fade(1, 0));
+            }
+            else
+            {
+                // Cutscene already played, just fade out
                 yield return StartCoroutine(Fade(1, 0));
             }
         }
         else
         {
-            // If no cutscene, just fade back to normal
+            // 4️⃣ No cutscene — fade back out normally
+            yield return new WaitForSeconds(0.3f);
             yield return StartCoroutine(Fade(1, 0));
         }
 
+        // Reset transition flags
         isTransitioning = false;
-
-        // Wait until player exits trigger before re-enabling teleport
         StartCoroutine(ResetTeleportPermission());
     }
 
@@ -107,6 +120,9 @@ public class TeleportFade : MonoBehaviour
 
     IEnumerator Fade(float startAlpha, float endAlpha)
     {
+        startAlpha = Mathf.Clamp01(startAlpha);
+        endAlpha = Mathf.Clamp01(endAlpha);
+
         float elapsed = 0f;
         Color c = fadeImage.color;
 
