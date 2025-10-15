@@ -5,17 +5,14 @@ using UnityEngine.InputSystem;
 
 public class NPC : MonoBehaviour
 {
-    public string[] dialogueLines;
-    public AudioClip[] voiceLines;
+    [Header("Dialogue Settings")]
+    public DialogueLine[] dialogueLines; // ✅ Each element has name, text, voice
 
     private bool playerInRange = false;
-
-    // ✅ Cache DialogueManager reference for performance
     private DialogueManager dialogueManager;
 
     private void Start()
     {
-        // Unity 6+ API: FindFirstObjectByType
         dialogueManager = Object.FindFirstObjectByType<DialogueManager>();
         if (dialogueManager == null)
         {
@@ -33,7 +30,7 @@ public class NPC : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E))
 #endif
             {
-                dialogueManager.StartDialogue(dialogueLines, voiceLines);
+                dialogueManager.StartDialogue(dialogueLines);
             }
         }
     }
@@ -43,7 +40,7 @@ public class NPC : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerInRange = true;
-            // TODO: Show "Press E to Talk" UI
+            // TODO: Show "Press E to Talk" prompt
         }
     }
 
@@ -52,7 +49,7 @@ public class NPC : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerInRange = false;
-            // TODO: Hide "Press E to Talk" UI
+            // TODO: Hide prompt
         }
     }
 }

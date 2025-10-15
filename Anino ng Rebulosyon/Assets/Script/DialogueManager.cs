@@ -9,12 +9,13 @@ using UnityEngine.InputSystem;
 
 public class DialogueManager : MonoBehaviour
 {
-    public GameObject dialogueUI; // Panel for dialogue
-    public TMP_Text dialogueText; // TextMeshPro for dialogue
-    public AudioSource voiceOverSource; // AudioSource for voice playback
+    [Header("UI References")]
+    public GameObject dialogueUI;
+    public TMP_Text nameText;         // 👈 NEW: for displaying who’s talking
+    public TMP_Text dialogueText;
+    public AudioSource voiceOverSource;
 
-    private string[] lines; // Lines of dialogue
-    private AudioClip[] voiceClips; // Matching voice lines
+    private DialogueLine[] lines;
     private int currentLine = 0;
     private bool isDialogueActive = false;
 
@@ -33,12 +34,13 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    public void StartDialogue(string[] dialogueLines, AudioClip[] audioClips)
+    public void StartDialogue(DialogueLine[] dialogueLines)
     {
-        ThirdPersonController.dialogue = true; // 🛑 Freeze movement
+        if (dialogueLines == null || dialogueLines.Length == 0) return;
+
+        ThirdPersonController.dialogue = true; // lock movement
         isDialogueActive = true;
         lines = dialogueLines;
-        voiceClips = audioClips;
         currentLine = 0;
 
         dialogueUI.SetActive(true);
@@ -47,11 +49,17 @@ public class DialogueManager : MonoBehaviour
 
     private void ShowLine()
     {
-        dialogueText.text = lines[currentLine];
-        if (voiceOverSource && voiceClips[currentLine])
+        DialogueLine line = lines[currentLine];
+
+        if (nameText != null)
+            nameText.text = line.speakerName;
+
+        dialogueText.text = line.lineText;
+
+        if (voiceOverSource && line.voiceClip)
         {
             voiceOverSource.Stop();
-            voiceOverSource.clip = voiceClips[currentLine];
+            voiceOverSource.clip = line.voiceClip;
             voiceOverSource.Play();
         }
     }
@@ -73,6 +81,6 @@ public class DialogueManager : MonoBehaviour
     {
         dialogueUI.SetActive(false);
         isDialogueActive = false;
-        ThirdPersonController.dialogue = false; // ✅ Unfreeze movement
+        ThirdPersonController.dialogue = false; // unlock movement
     }
 }

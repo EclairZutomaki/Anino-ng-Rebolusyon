@@ -6810,6 +6810,142 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 88130099}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &93983808
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 93983809}
+  - component: {fileID: 93983810}
+  - component: {fileID: 93983811}
+  m_Layer: 0
+  m_Name: Name
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &93983809
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 93983808}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 504602485}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 0.080566406, y: -53.78302}
+  m_SizeDelta: {x: 1919.839, y: 91.55347}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &93983810
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 93983808}
+  m_CullTransparentMesh: 1
+--- !u!114 &93983811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 93983808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: New Text
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4278244863
+  m_fontColor: {r: 1, g: 0.83542955, b: 0, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 36
+  m_fontSizeBase: 36
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1001 &94517382
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26550,7 +26686,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &426342329
 RectTransform:
   m_ObjectHideFlags: 0
@@ -26564,7 +26700,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 504602485}
-  - {fileID: 759394590}
   - {fileID: 1646219017}
   m_Father: {fileID: 1574188181}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -27497,15 +27632,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueLines:
-  - Ako si Sisa
-  - Ang Ina nila Bacilio at Crispin
-  - Magandang Umaga sa Iyo Don Crisostomo Ibarra
-  - Ako ay nagagalak na makitang muli
-  voiceLines:
-  - {fileID: 8300000, guid: 67c8b33e424ccdc4486edf538ab91c5a, type: 3}
-  - {fileID: 8300000, guid: 72f526a6a9890f643a88e85a61c86c8a, type: 3}
-  - {fileID: 8300000, guid: 186de84b3207156479abe98f4958fed0, type: 3}
-  - {fileID: 8300000, guid: 186de84b3207156479abe98f4958fed0, type: 3}
+  - speakerName: 
+    lineText: 
+    voiceClip: {fileID: 0}
+  - speakerName: 
+    lineText: 
+    voiceClip: {fileID: 0}
+  - speakerName: 
+    lineText: 
+    voiceClip: {fileID: 0}
+  - speakerName: 
+    lineText: 
+    voiceClip: {fileID: 0}
 --- !u!23 &442493867
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -30470,13 +30608,15 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 759394590}
+  - {fileID: 93983809}
   m_Father: {fileID: 426342329}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0}
-  m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 132.44763}
-  m_SizeDelta: {x: 2110, y: 264.89563}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: 0, y: 122.75}
+  m_SizeDelta: {x: 0, y: 245.4964}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &504602486
 MonoBehaviour:
@@ -30491,15 +30631,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.3915094, b: 0.3915094, a: 0.392}
+  m_Color: {r: 0.4716981, g: 0.4716981, b: 0.4716981, a: 0.69411767}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 652bd2a17345a564d9499193de5e17ec, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -44810,7 +44950,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 512
+  m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -44861,17 +45001,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 759394587}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 426342329}
+  m_Father: {fileID: 504602485}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.00036621094, y: -359.22}
-  m_SizeDelta: {x: -0.16113, y: -933}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 0.08068848, y: -178.72809}
+  m_SizeDelta: {x: 1919.839, y: 172.54547}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &760738286
 GameObject:
@@ -71269,15 +71409,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueLines:
-  - Ako si Sisa
-  - Ang Ina nila Bacilio at Crispin
-  - Magandang Umaga sa Iyo Don Crisostomo Ibarra
-  - Ako ay nagagalak na makitang muli
-  voiceLines:
-  - {fileID: 8300000, guid: 67c8b33e424ccdc4486edf538ab91c5a, type: 3}
-  - {fileID: 8300000, guid: 72f526a6a9890f643a88e85a61c86c8a, type: 3}
-  - {fileID: 8300000, guid: 186de84b3207156479abe98f4958fed0, type: 3}
-  - {fileID: 8300000, guid: 186de84b3207156479abe98f4958fed0, type: 3}
+  - speakerName: Crisostomo
+    lineText: Hi
+    voiceClip: {fileID: 8300000, guid: 1a91fcd19acf1e54bba0945d9f390849, type: 3}
+  - speakerName: Sisa
+    lineText: Hello
+    voiceClip: {fileID: 8300000, guid: 14e8a8d2158bec840b56c54f5266e692, type: 3}
 --- !u!23 &1254597427
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -76543,6 +76680,79 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1955485117}
   m_LocalEulerAnglesHint: {x: -2.894, y: 81.827, z: 0.193}
+--- !u!1001 &1342361641
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: aac84d114adce00458951a7c7bbf832f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 416.35254
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: aac84d114adce00458951a7c7bbf832f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 19.996357
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: aac84d114adce00458951a7c7bbf832f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 593.2684
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: aac84d114adce00458951a7c7bbf832f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: aac84d114adce00458951a7c7bbf832f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: aac84d114adce00458951a7c7bbf832f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: aac84d114adce00458951a7c7bbf832f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: aac84d114adce00458951a7c7bbf832f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: aac84d114adce00458951a7c7bbf832f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: aac84d114adce00458951a7c7bbf832f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: aac84d114adce00458951a7c7bbf832f, type: 3}
+      propertyPath: m_Name
+      value: Padre_Salvi
+      objectReference: {fileID: 0}
+    - target: {fileID: 5097370190579632962, guid: aac84d114adce00458951a7c7bbf832f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.10442172
+      objectReference: {fileID: 0}
+    - target: {fileID: 5097370190579632962, guid: aac84d114adce00458951a7c7bbf832f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.04556438
+      objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: aac84d114adce00458951a7c7bbf832f, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 5df10465d4663f4458a4a34044ae31de, type: 2}
+    - target: {fileID: 5866666021909216657, guid: aac84d114adce00458951a7c7bbf832f, type: 3}
+      propertyPath: m_WarningMessage
+      value: 
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: aac84d114adce00458951a7c7bbf832f, type: 3}
 --- !u!1001 &1343994560
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -91795,6 +92005,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueUI: {fileID: 426342328}
+  nameText: {fileID: 93983811}
   dialogueText: {fileID: 759394588}
   voiceOverSource: {fileID: 1766708761}
 --- !u!4 &1574188181
@@ -96352,7 +96563,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1646219017
 Transform:
   m_ObjectHideFlags: 0
@@ -124456,6 +124667,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BagCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 3148994325199455815, guid: c65e5702c0c657743ba3161271e8ea4f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8076682357225767569, guid: c65e5702c0c657743ba3161271e8ea4f, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -125002,6 +125217,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sisa
       objectReference: {fileID: 0}
+    - target: {fileID: 6034452426666416091, guid: 9cf9fc07bfda2f84293b532c31f34eaa, type: 3}
+      propertyPath: dialogueLines.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6034452426666416091, guid: 9cf9fc07bfda2f84293b532c31f34eaa, type: 3}
+      propertyPath: dialogueLines.Array.data[0].lineText
+      value: HEllo
+      objectReference: {fileID: 0}
+    - target: {fileID: 6034452426666416091, guid: 9cf9fc07bfda2f84293b532c31f34eaa, type: 3}
+      propertyPath: dialogueLines.Array.data[1].lineText
+      value: Hi
+      objectReference: {fileID: 0}
+    - target: {fileID: 6034452426666416091, guid: 9cf9fc07bfda2f84293b532c31f34eaa, type: 3}
+      propertyPath: dialogueLines.Array.data[0].voiceClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 85016e0f2b01da248b9663dd49a161b0, type: 3}
+    - target: {fileID: 6034452426666416091, guid: 9cf9fc07bfda2f84293b532c31f34eaa, type: 3}
+      propertyPath: dialogueLines.Array.data[1].voiceClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 186de84b3207156479abe98f4958fed0, type: 3}
+    - target: {fileID: 6034452426666416091, guid: 9cf9fc07bfda2f84293b532c31f34eaa, type: 3}
+      propertyPath: dialogueLines.Array.data[0].speakerName
+      value: Sisa
+      objectReference: {fileID: 0}
+    - target: {fileID: 6034452426666416091, guid: 9cf9fc07bfda2f84293b532c31f34eaa, type: 3}
+      propertyPath: dialogueLines.Array.data[1].speakerName
+      value: Crisostomo
+      objectReference: {fileID: 0}
     - target: {fileID: 7778611142720487969, guid: 9cf9fc07bfda2f84293b532c31f34eaa, type: 3}
       propertyPath: m_LocalPosition.x
       value: -16.028442
@@ -125323,3 +125566,4 @@ SceneRoots:
   - {fileID: 469094141}
   - {fileID: 888423140}
   - {fileID: 1552388005}
+  - {fileID: 1342361641}
