@@ -22,10 +22,31 @@ public class FishingRod : MonoBehaviour
 
     Transform baitPosition;
 
+    GameObject baitReference;
+
     private void Start()
     {
         animator = GetComponent<Animator>();
         isEquipped = true;
+    }
+
+    private void OnEnable()
+    {
+        // Subscribe to event
+        FishingSystem.OnFishingEnd += HandleFishingEnd;
+
+    }
+
+    private void OnDestroy()
+    {
+        // Unsubscribe to event
+        FishingSystem.OnFishingEnd -= HandleFishingEnd;
+
+    }
+
+    public void HandleFishingEnd()
+    {
+        Destroy(baitReference);
     }
 
 
@@ -79,7 +100,7 @@ public class FishingRod : MonoBehaviour
             }
         } 
      
-        if (isCasted && Input.GetMouseButtonDown(1))
+        if (isCasted && Input.GetMouseButtonDown(1) && FishingSystem.Instance.isThereABite) // only when there is a bite
         {
             PullRod();
         }
@@ -99,7 +120,10 @@ public class FishingRod : MonoBehaviour
 
         baitPosition = instantiatedBait.transform;
 
+        baitReference = instantiatedBait;
+
         // ---- > Start Fish Bite Logic
+        FishingSystem.Instance.StartFishing(WaterSource.Lake);
     }
 
     private void PullRod()
@@ -109,5 +133,6 @@ public class FishingRod : MonoBehaviour
         isPulling = true;
 
         // ---- > Start Minigame Logic
+        FishingSystem.Instance.SetHasPulled();
     }
 }
