@@ -1,37 +1,32 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class NPCInteraction : MonoBehaviour
 {
-    public string npcName;  // e.g. "Padre Damaso"
-    [HideInInspector] public bool hasTalked = false;
-
+    [HideInInspector] public bool hasTalked = false; // hides from inspector but still public
     private bool playerInRange = false;
 
-    void Update()
+    private void Update()
     {
         if (playerInRange && Input.GetKeyDown(KeyCode.E))
         {
-            Interact();
-        }
-    }
-
-    void Interact()
-    {
-        if (!hasTalked)
-        {
+            // ✅ Mark that this NPC has been talked to
             hasTalked = true;
-            Debug.Log($"Talked to {npcName}");
-            // TODO: Trigger your dialogue system here
+
+            // ✅ Optional log for debugging
+            Debug.Log($"{gameObject.name} has been talked to.");
+
+            // ⚡ Let your existing dialogue system handle the rest
+            // (no need to start any dialogue here)
         }
     }
 
-    void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
             playerInRange = true;
     }
 
-    void OnTriggerExit(Collider other)
+    private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))
             playerInRange = false;
