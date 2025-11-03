@@ -1,21 +1,27 @@
 ﻿using UnityEngine;
 using UnityEngine.Playables;
-using TMPro; // ✅ for TextMeshPro
+using TMPro; // ✅ For TextMeshPro
 
 public class CutsceneTriggerManager : MonoBehaviour
 {
     [Header("References")]
     public GameObject[] requiredNPCs;       // NPCs that need to be talked to
     public PlayableDirector secondCutscene; // Cutscene timeline
-    public GameObject dialoguePanel;        // Your Dialogue Panel UI
-    public TMP_Text dialogueText;           // ✅ TMP Text instead of legacy Text
+    public GameObject dialoguePanel;        // Dialogue Panel UI
+    public TMP_Text dialogueText;           // ✅ TMP Text
 
     [Header("Next Cutscene Trigger")]
     public GameObject cutscene3Trigger;     // The invisible cube (leave unchecked in Inspector)
 
     [Header("Cutscene Settings")]
     [Tooltip("If checked, the 2nd cutscene will only play once.")]
-    public bool playOnce = true;            // ✅ check/uncheck in Inspector
+    public bool playOnce = true;
+
+    [Header("Reminder Settings")]
+    [TextArea]
+    [Tooltip("Message shown when player hasn’t talked to all required NPCs yet.")]
+    public string reminderMessage = "I need to talk to them first."; // ✅ Editable in Inspector
+    public float reminderDuration = 2.5f; // How long the message stays on screen
 
     private bool hasPlayed = false;
     private bool playerInRange = false;
@@ -30,7 +36,7 @@ public class CutsceneTriggerManager : MonoBehaviour
             }
             else
             {
-                ShowReminder("Kailangan ko muna kausapin sina Kapitan Tiyago, Tenyente, at Padre Damaso.");
+                ShowReminder(reminderMessage);
             }
         }
     }
@@ -58,7 +64,6 @@ public class CutsceneTriggerManager : MonoBehaviour
         hasPlayed = true;
         Debug.Log("Second cutscene triggered!");
 
-        // ✅ Activate the cube for 3rd cutscene after the 2nd one starts (or ends)
         if (cutscene3Trigger != null)
             cutscene3Trigger.SetActive(true);
     }
@@ -70,7 +75,7 @@ public class CutsceneTriggerManager : MonoBehaviour
             dialoguePanel.SetActive(true);
             dialogueText.text = message;
             CancelInvoke(nameof(HideReminder));
-            Invoke(nameof(HideReminder), 2.5f);
+            Invoke(nameof(HideReminder), reminderDuration);
         }
         else
         {
