@@ -13994,6 +13994,7 @@ GameObject:
   - component: {fileID: 307417965}
   - component: {fileID: 307417964}
   - component: {fileID: 307417963}
+  - component: {fileID: 307417967}
   m_Layer: 0
   m_Name: Kapitan Tiago
   m_TagString: Untagged
@@ -14084,12 +14085,31 @@ Transform:
   m_GameObject: {fileID: 307417962}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 39.65384, y: 1.5, z: 63.482}
+  m_LocalPosition: {x: 39.754, y: 1.5, z: 63.709}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1103143207}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &307417967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 307417962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37902d4e0885eeb42a9ccc1b89b3fdf5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerType: 0
+  triggerKey: 101
+  objectsToToggle:
+  - target: {fileID: 788021621}
+    action: 1
+  startHidden: 0
+  destroyAfterTrigger: 0
 --- !u!1001 &308690792
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -38415,6 +38435,7 @@ GameObject:
   - component: {fileID: 681038064}
   - component: {fileID: 681038063}
   - component: {fileID: 681038068}
+  - component: {fileID: 681038069}
   m_Layer: 0
   m_Name: Outisde
   m_TagString: Untagged
@@ -38547,6 +38568,27 @@ MonoBehaviour:
   interactUIPanel: {fileID: 1894753048}
   interactKey: 19
   destroyAfterInteract: 0
+--- !u!114 &681038069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 681038062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37902d4e0885eeb42a9ccc1b89b3fdf5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerType: 0
+  triggerKey: 101
+  objectsToToggle:
+  - target: {fileID: 1763882950}
+    action: 1
+  - target: {fileID: 1659383778}
+    action: 1
+  startHidden: 0
+  destroyAfterTrigger: 0
 --- !u!4 &682554311 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400002, guid: 57dd36e82294d854faffd961e1b3e361, type: 3}
@@ -42271,7 +42313,7 @@ Transform:
   m_GameObject: {fileID: 756390117}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.3830872, y: 1.5, z: 4.723114}
+  m_LocalPosition: {x: -1.3830872, y: 1.5, z: -0.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -43900,7 +43942,7 @@ MonoBehaviour:
   target: {fileID: 756390118}
   cam: {fileID: 2147010029}
   canvas: {fileID: 709315957}
-  hideDistance: 7
+  hideDistance: 5
   showDistance: 500
   clampToScreen: 1
   edgeBuffer: 30
