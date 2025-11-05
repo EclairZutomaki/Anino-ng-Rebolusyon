@@ -4,14 +4,13 @@ using System.Collections.Generic;
 public class TenyenteFollowPath : MonoBehaviour
 {
     [Header("Path Settings")]
-    [Tooltip("Waypoints the NPC will follow in order.")]
-    public List<Transform> waypoints; // Assign waypoints in Inspector
-
-    [Tooltip("Movement speed of the NPC.")]
+    public List<Transform> waypoints;
     public float speed = 2f;
-
-    [Tooltip("Time the NPC waits at each waypoint before moving on.")]
     public float waitTime = 2f;
+
+    [Header("Animation Settings")]
+    public Animator animator;
+    private readonly string animWalk = "isWalking";
 
     private int currentIndex = 0;
     private bool waiting = false;
@@ -19,13 +18,30 @@ public class TenyenteFollowPath : MonoBehaviour
     private bool playerInRange = false;
     private bool pathComplete = false;
 
+    // 👇 movement tracking vars
+    private Vector3 lastPosition;
+    private float moveSpeed;
+    private float smoothTimer = 0f;
+    private bool smoothWalkingState = false;
+
+    void Start()
+    {
+        lastPosition = transform.position;
+    }
+
     void Update()
     {
-        // Stop everything if path finished or no waypoints
-        if (waypoints.Count == 0 || pathComplete) return;
+        if (waypoints.Count == 0 || pathComplete)
+        {
+            SetWalking(false);
+            return;
+        }
 
-        // Move only if player is inside collider
-        if (!playerInRange) return;
+        if (!playerInRange)
+        {
+            SetWalking(false);
+            return;
+        }
 
         if (waiting)
         {
@@ -35,6 +51,26 @@ public class TenyenteFollowPath : MonoBehaviour
         {
             MoveToWaypoint();
         }
+
+        // 🧠 Calculate movement speed (for smoother animation)
+        moveSpeed = (transform.position - lastPosition).magnitude / Mathf.Max(Time.deltaTime, 0.0001f);
+        lastPosition = transform.position;
+
+        bool detectedWalking = moveSpeed > 0.05f; // threshold so idle doesn’t trigger too fast
+
+        // smooth transition between idle/walk
+        if (detectedWalking)
+        {
+            smoothTimer += Time.deltaTime;
+            if (smoothTimer > 0.15f) smoothWalkingState = true; // walking for more than 0.15s
+        }
+        else
+        {
+            smoothTimer -= Time.deltaTime;
+            if (smoothTimer <= 0f) smoothWalkingState = false; // fully stopped
+        }
+
+        SetWalking(smoothWalkingState);
     }
 
     void MoveToWaypoint()
@@ -42,10 +78,9 @@ public class TenyenteFollowPath : MonoBehaviour
         Transform target = waypoints[currentIndex];
         Vector3 targetPos = new Vector3(target.position.x, transform.position.y, target.position.z);
 
-        // Move towards target
         transform.position = Vector3.MoveTowards(transform.position, targetPos, speed * Time.deltaTime);
 
-        // Rotate smoothly
+        // Rotate smoothly toward waypoint
         Vector3 direction = (targetPos - transform.position).normalized;
         if (direction.magnitude > 0.1f)
         {
@@ -67,25 +102,20 @@ public class TenyenteFollowPath : MonoBehaviour
         {
             waiting = false;
             waitCounter = 0f;
-
-            // Move to next waypoint (no looping)
             currentIndex++;
 
-            // ✅ If Tenyente has reached the final waypoint, stop moving
             if (currentIndex >= waypoints.Count)
             {
                 pathComplete = true;
+                SetWalking(false);
             }
         }
     }
 
-    // 🧠 Detect player entering/leaving trigger
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
-        {
             playerInRange = true;
-        }
     }
 
     private void OnTriggerExit(Collider other)
@@ -93,6 +123,13 @@ public class TenyenteFollowPath : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerInRange = false;
+            SetWalking(false);
         }
+    }
+
+    void SetWalking(bool isWalking)
+    {
+        if (animator != null)
+            animator.SetBool(animWalk, isWalking);
     }
 }
