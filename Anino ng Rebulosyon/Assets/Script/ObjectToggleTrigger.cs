@@ -16,12 +16,20 @@ public class ObjectToggleTrigger : MonoBehaviour
     public TriggerType triggerType = TriggerType.OnKeyPress;
     public KeyCode triggerKey = KeyCode.E;
 
+    [Tooltip("List of tags allowed to trigger this. Example: Player, Draggable, etc.")]
+    public string[] allowedTags = new string[] { "Player" };
+
     [Header("Objects to Control")]
     public ToggleObject[] objectsToToggle;
 
     [Header("Optional Settings")]
     public bool startHidden = false;
+
+    [Tooltip("If true, this trigger object will be destroyed after activation.")]
     public bool destroyAfterTrigger = false;
+
+    [Tooltip("Delay (in seconds) before destroying this object after trigger.")]
+    public float destroyDelay = 0f;
 
     private bool playerInRange = false;
 
@@ -45,7 +53,7 @@ public class ObjectToggleTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (IsAllowedTag(other.tag))
         {
             playerInRange = true;
 
@@ -56,8 +64,18 @@ public class ObjectToggleTrigger : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (IsAllowedTag(other.tag))
             playerInRange = false;
+    }
+
+    private bool IsAllowedTag(string tagToCheck)
+    {
+        foreach (string tag in allowedTags)
+        {
+            if (tagToCheck == tag)
+                return true;
+        }
+        return false;
     }
 
     private void HandleToggle()
@@ -71,11 +89,9 @@ public class ObjectToggleTrigger : MonoBehaviour
                 case ToggleAction.Show:
                     obj.target.SetActive(true);
                     break;
-
                 case ToggleAction.Hide:
                     obj.target.SetActive(false);
                     break;
-
                 case ToggleAction.Toggle:
                     obj.target.SetActive(!obj.target.activeSelf);
                     break;
@@ -83,6 +99,11 @@ public class ObjectToggleTrigger : MonoBehaviour
         }
 
         if (destroyAfterTrigger)
-            Destroy(gameObject);
+        {
+            if (destroyDelay > 0f)
+                Destroy(gameObject, destroyDelay);
+            else
+                Destroy(gameObject);
+        }
     }
 }
