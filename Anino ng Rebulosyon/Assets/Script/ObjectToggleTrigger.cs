@@ -12,6 +12,9 @@ public class ObjectToggleTrigger : MonoBehaviour
         public GameObject target;
         public ToggleAction action = ToggleAction.Toggle;
 
+        [Tooltip("Delay (in seconds) before showing this object. Only used if action = Show.")]
+        public float showDelay = 0f;
+
         [Tooltip("Delay (in seconds) before hiding this object. Only used if action = Hide.")]
         public float hideDelay = 0f;
     }
@@ -91,7 +94,10 @@ public class ObjectToggleTrigger : MonoBehaviour
             switch (obj.action)
             {
                 case ToggleAction.Show:
-                    obj.target.SetActive(true);
+                    if (obj.showDelay > 0f)
+                        StartCoroutine(ShowWithDelay(obj.target, obj.showDelay));
+                    else
+                        obj.target.SetActive(true);
                     break;
 
                 case ToggleAction.Hide:
@@ -121,5 +127,12 @@ public class ObjectToggleTrigger : MonoBehaviour
         yield return new WaitForSeconds(delay);
         if (target != null)
             target.SetActive(false);
+    }
+
+    private IEnumerator ShowWithDelay(GameObject target, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        if (target != null)
+            target.SetActive(true);
     }
 }
