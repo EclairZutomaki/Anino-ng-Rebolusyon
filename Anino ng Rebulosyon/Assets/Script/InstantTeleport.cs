@@ -12,8 +12,8 @@ public class InstantTeleport : MonoBehaviour
 
     [Header("Teleport Settings")]
     public Transform teleportDestination;
-    [Tooltip("Time (in seconds) before the player is teleported.")]
-    public float teleportDelay = 0f; // ← adjustable timer
+    [Tooltip("Time (in seconds) before teleport happens.")]
+    public float teleportDelay = 0f;
 
     [Header("Cutscene Settings (Optional)")]
     public bool playCutscene = false;
@@ -37,17 +37,25 @@ public class InstantTeleport : MonoBehaviour
         if (triggerType == TriggerType.OnKeyPress && isTouching && !hasJustTeleported)
         {
             if (Input.GetKeyDown(interactKey))
-            {
-                StartCoroutine(TeleportWithDelay());
-            }
+                StartCoroutine(HandleTeleport());
         }
     }
 
-    private IEnumerator TeleportWithDelay()
+    private IEnumerator HandleTeleport()
     {
         hasJustTeleported = true;
 
-        // Wait before teleporting
+        // 🎬 Play the cutscene immediately
+        if (playCutscene && timelineDirector != null)
+        {
+            if (!playCutsceneOnce || (playCutsceneOnce && !hasPlayedCutscene))
+            {
+                hasPlayedCutscene = true;
+                timelineDirector.Play();
+            }
+        }
+
+        // ⏳ Then wait before teleporting
         if (teleportDelay > 0f)
             yield return new WaitForSeconds(teleportDelay);
 
@@ -58,7 +66,6 @@ public class InstantTeleport : MonoBehaviour
     {
         if (player == null || teleportDestination == null) return;
 
-        // Disable CharacterController for safe reposition
         CharacterController cc = player.GetComponent<CharacterController>();
         if (cc) cc.enabled = false;
 
@@ -66,16 +73,6 @@ public class InstantTeleport : MonoBehaviour
         player.rotation = teleportDestination.rotation;
 
         if (cc) cc.enabled = true;
-
-        // Optional cutscene
-        if (playCutscene && timelineDirector != null)
-        {
-            if (!playCutsceneOnce || (playCutsceneOnce && !hasPlayedCutscene))
-            {
-                hasPlayedCutscene = true;
-                timelineDirector.Play();
-            }
-        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -84,9 +81,7 @@ public class InstantTeleport : MonoBehaviour
         isTouching = true;
 
         if (triggerType == TriggerType.OnCollision && !hasJustTeleported)
-        {
-            StartCoroutine(TeleportWithDelay());
-        }
+            StartCoroutine(HandleTeleport());
     }
 
     private void OnTriggerExit(Collider other)
