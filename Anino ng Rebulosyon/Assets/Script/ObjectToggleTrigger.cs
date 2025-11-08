@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class ObjectToggleTrigger : MonoBehaviour
 {
@@ -10,6 +11,9 @@ public class ObjectToggleTrigger : MonoBehaviour
     {
         public GameObject target;
         public ToggleAction action = ToggleAction.Toggle;
+
+        [Tooltip("Delay (in seconds) before hiding this object. Only used if action = Hide.")]
+        public float hideDelay = 0f;
     }
 
     [Header("Trigger Settings")]
@@ -89,9 +93,14 @@ public class ObjectToggleTrigger : MonoBehaviour
                 case ToggleAction.Show:
                     obj.target.SetActive(true);
                     break;
+
                 case ToggleAction.Hide:
-                    obj.target.SetActive(false);
+                    if (obj.hideDelay > 0f)
+                        StartCoroutine(HideWithDelay(obj.target, obj.hideDelay));
+                    else
+                        obj.target.SetActive(false);
                     break;
+
                 case ToggleAction.Toggle:
                     obj.target.SetActive(!obj.target.activeSelf);
                     break;
@@ -105,5 +114,12 @@ public class ObjectToggleTrigger : MonoBehaviour
             else
                 Destroy(gameObject);
         }
+    }
+
+    private IEnumerator HideWithDelay(GameObject target, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        if (target != null)
+            target.SetActive(false);
     }
 }
