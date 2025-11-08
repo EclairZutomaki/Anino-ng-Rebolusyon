@@ -1,5 +1,6 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Playables;
+using System.Collections;
 
 public class InstantTeleport : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class InstantTeleport : MonoBehaviour
 
     [Header("Teleport Settings")]
     public Transform teleportDestination;
+    [Tooltip("Time (in seconds) before the player is teleported.")]
+    public float teleportDelay = 0f; // ← adjustable timer
 
     [Header("Cutscene Settings (Optional)")]
     public bool playCutscene = false;
@@ -35,16 +38,25 @@ public class InstantTeleport : MonoBehaviour
         {
             if (Input.GetKeyDown(interactKey))
             {
-                TeleportPlayer();
+                StartCoroutine(TeleportWithDelay());
             }
         }
+    }
+
+    private IEnumerator TeleportWithDelay()
+    {
+        hasJustTeleported = true;
+
+        // Wait before teleporting
+        if (teleportDelay > 0f)
+            yield return new WaitForSeconds(teleportDelay);
+
+        TeleportPlayer();
     }
 
     private void TeleportPlayer()
     {
         if (player == null || teleportDestination == null) return;
-
-        hasJustTeleported = true;
 
         // Disable CharacterController for safe reposition
         CharacterController cc = player.GetComponent<CharacterController>();
@@ -73,7 +85,7 @@ public class InstantTeleport : MonoBehaviour
 
         if (triggerType == TriggerType.OnCollision && !hasJustTeleported)
         {
-            TeleportPlayer();
+            StartCoroutine(TeleportWithDelay());
         }
     }
 
