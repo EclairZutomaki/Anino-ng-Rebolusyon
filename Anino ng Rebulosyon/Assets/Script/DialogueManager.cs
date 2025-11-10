@@ -11,13 +11,16 @@ public class DialogueManager : MonoBehaviour
 {
     [Header("UI References")]
     public GameObject dialogueUI;
-    public TMP_Text nameText;         // 👈 NEW: for displaying who’s talking
-    public TMP_Text dialogueText;
+    public TMP_Text nameText;     // Speaker name text
+    public TMP_Text dialogueText; // Dialogue content text
     public AudioSource voiceOverSource;
 
     private DialogueLine[] lines;
     private int currentLine = 0;
     private bool isDialogueActive = false;
+
+    [HideInInspector]
+    public bool isDialogueFinished = false; // ✅ Now properly managed
 
     void Update()
     {
@@ -38,8 +41,10 @@ public class DialogueManager : MonoBehaviour
     {
         if (dialogueLines == null || dialogueLines.Length == 0) return;
 
-        ThirdPersonController.dialogue = true; // lock movement
+        ThirdPersonController.dialogue = true; // lock player movement
         isDialogueActive = true;
+        isDialogueFinished = false; // ✅ reset when starting new dialogue
+
         lines = dialogueLines;
         currentLine = 0;
 
@@ -81,6 +86,7 @@ public class DialogueManager : MonoBehaviour
     {
         dialogueUI.SetActive(false);
         isDialogueActive = false;
-        ThirdPersonController.dialogue = false; // unlock movement
+        isDialogueFinished = true; // ✅ mark dialogue as finished
+        ThirdPersonController.dialogue = false; // unlock player movement
     }
 }
