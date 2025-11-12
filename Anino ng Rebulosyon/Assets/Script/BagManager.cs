@@ -1,42 +1,52 @@
 ﻿using UnityEngine;
-using UnityEngine.UI; // Needed for Button
+using UnityEngine.UI;
 
 public class BagManager : MonoBehaviour
 {
     [Header("UI PANELS")]
-    public GameObject bagUI;            // Main Bag container
-    public GameObject documentsPanel;   // Documents tab panel
-    public GameObject mapPanel;         // Map tab panel
-    public GameObject dictionaryPanel;  // Dictionary tab panel
+    public GameObject bagUI;
+    public GameObject documentsPanel;
+    public GameObject mapPanel;
+    public GameObject dictionaryPanel;
 
     [Header("Tab Buttons")]
     public Button mapButton;
     public Button documentsButton;
     public Button dictionaryButton;
 
+    [Header("Map Icons")]
+    public GameObject mainQuestIcon;  // 🧭 Icon for Main Quest
+    public GameObject sideQuestIcon;  // ⭐ Icon for Side Quest
+
     private void Start()
     {
-        // 🔒 Hide Bag & all panels at startup
+        // Hide everything on start
         bagUI.SetActive(false);
         documentsPanel.SetActive(false);
         mapPanel.SetActive(false);
         dictionaryPanel.SetActive(false);
+
+        // Hide map icons at start
+        if (mainQuestIcon) mainQuestIcon.SetActive(false);
+        if (sideQuestIcon) sideQuestIcon.SetActive(false);
     }
 
     public void ShowBag()
     {
         bagUI.SetActive(true);
-        ShowMap(); // ✅ Default to Map
+        ShowMap(); // default to Map
     }
 
     public void HideBag()
     {
         bagUI.SetActive(false);
-
-        // Optional: Reset panel states when closing
         documentsPanel.SetActive(false);
         mapPanel.SetActive(false);
         dictionaryPanel.SetActive(false);
+
+        // Hide icons when bag is closed
+        if (mainQuestIcon) mainQuestIcon.SetActive(false);
+        if (sideQuestIcon) sideQuestIcon.SetActive(false);
     }
 
     public void ShowDocuments()
@@ -45,6 +55,7 @@ public class BagManager : MonoBehaviour
         mapPanel.SetActive(false);
         dictionaryPanel.SetActive(false);
         HighlightButton(documentsButton);
+        ToggleMapIcons(false);
     }
 
     public void ShowMap()
@@ -53,6 +64,7 @@ public class BagManager : MonoBehaviour
         mapPanel.SetActive(true);
         dictionaryPanel.SetActive(false);
         HighlightButton(mapButton);
+        ToggleMapIcons(true); // 👈 Show icons only when map is open
     }
 
     public void ShowDictionary()
@@ -61,14 +73,12 @@ public class BagManager : MonoBehaviour
         mapPanel.SetActive(false);
         dictionaryPanel.SetActive(true);
         HighlightButton(dictionaryButton);
+        ToggleMapIcons(false);
     }
 
     private void HighlightButton(Button activeButton)
     {
-        // 🎨 Reset all buttons to default color
         ResetButtonColors();
-
-        // 🎨 Highlight the active button
         activeButton.image.color = Color.green;
     }
 
@@ -77,5 +87,11 @@ public class BagManager : MonoBehaviour
         mapButton.image.color = Color.white;
         documentsButton.image.color = Color.white;
         dictionaryButton.image.color = Color.white;
+    }
+
+    private void ToggleMapIcons(bool show)
+    {
+        if (mainQuestIcon) mainQuestIcon.SetActive(show);
+        if (sideQuestIcon) sideQuestIcon.SetActive(show);
     }
 }
