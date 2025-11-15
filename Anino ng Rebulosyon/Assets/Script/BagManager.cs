@@ -15,18 +15,19 @@ public class BagManager : MonoBehaviour
     public Button dictionaryButton;
 
     [Header("Map Icons")]
-    public GameObject mainQuestIcon;  // 🧭 Icon for Main Quest
-    public GameObject sideQuestIcon;  // ⭐ Icon for Side Quest
+    public GameObject mainQuestIcon;
+    public GameObject sideQuestIcon;
+
+    [Header("Highlight Settings")]
+    public Color highlightColor = Color.green; // 🎨 Color wheel freedom
 
     private void Start()
     {
-        // Hide everything on start
         bagUI.SetActive(false);
         documentsPanel.SetActive(false);
         mapPanel.SetActive(false);
         dictionaryPanel.SetActive(false);
 
-        // Hide map icons at start
         if (mainQuestIcon) mainQuestIcon.SetActive(false);
         if (sideQuestIcon) sideQuestIcon.SetActive(false);
     }
@@ -34,17 +35,17 @@ public class BagManager : MonoBehaviour
     public void ShowBag()
     {
         bagUI.SetActive(true);
-        ShowMap(); // default to Map
+        ShowMap();
     }
 
     public void HideBag()
     {
         bagUI.SetActive(false);
+
         documentsPanel.SetActive(false);
         mapPanel.SetActive(false);
         dictionaryPanel.SetActive(false);
 
-        // Hide icons when bag is closed
         if (mainQuestIcon) mainQuestIcon.SetActive(false);
         if (sideQuestIcon) sideQuestIcon.SetActive(false);
     }
@@ -54,6 +55,7 @@ public class BagManager : MonoBehaviour
         documentsPanel.SetActive(true);
         mapPanel.SetActive(false);
         dictionaryPanel.SetActive(false);
+
         HighlightButton(documentsButton);
         ToggleMapIcons(false);
     }
@@ -63,8 +65,9 @@ public class BagManager : MonoBehaviour
         documentsPanel.SetActive(false);
         mapPanel.SetActive(true);
         dictionaryPanel.SetActive(false);
+
         HighlightButton(mapButton);
-        ToggleMapIcons(true); // 👈 Show icons only when map is open
+        ToggleMapIcons(true);
     }
 
     public void ShowDictionary()
@@ -72,6 +75,7 @@ public class BagManager : MonoBehaviour
         documentsPanel.SetActive(false);
         mapPanel.SetActive(false);
         dictionaryPanel.SetActive(true);
+
         HighlightButton(dictionaryButton);
         ToggleMapIcons(false);
     }
@@ -79,7 +83,7 @@ public class BagManager : MonoBehaviour
     private void HighlightButton(Button activeButton)
     {
         ResetButtonColors();
-        activeButton.image.color = Color.green;
+        activeButton.image.color = highlightColor;
     }
 
     private void ResetButtonColors()

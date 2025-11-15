@@ -7,16 +7,15 @@ using UnityEngine.InputSystem;
 public class NPC : MonoBehaviour
 {
     [Header("Dialogue Settings")]
-    public DialogueLine[] dialogueLines; // Each element has name, text, voice
+    public DialogueLine[] dialogueLines;
+
+    [Header("Interaction Settings")]
+    [Tooltip("If enabled, the player can talk to this NPC repeatedly.")]
+    public bool repeatable = false;   // <-- NEW CHECKBOX
 
     [Header("Trigger After Dialogue")]
-    [Tooltip("GameObjects that will be activated after the dialogue finishes.")]
     public GameObject[] objectsToActivate;
-
-    [Tooltip("GameObjects that will be hidden after the dialogue finishes.")]
     public GameObject[] objectsToHide;
-
-    [Tooltip("Delay (in seconds) before applying changes after the dialogue ends.")]
     public float activationDelay = 0f;
 
     private bool playerInRange = false;
@@ -42,8 +41,9 @@ public class NPC : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E))
 #endif
             {
-                // Only start once
-                if (!dialogueTriggered)
+                // If NOT repeatable → only run once
+                // If repeatable → always run
+                if (!dialogueTriggered || repeatable)
                 {
                     dialogueTriggered = true;
                     StartCoroutine(StartDialogueAndTrigger());
@@ -54,28 +54,23 @@ public class NPC : MonoBehaviour
 
     private IEnumerator StartDialogueAndTrigger()
     {
-        // Start dialogue
         dialogueManager.StartDialogue(dialogueLines);
 
-        // Wait until dialogue finishes
         yield return new WaitUntil(() => dialogueManager.isDialogueFinished);
 
-        // Optional delay
         if (activationDelay > 0)
             yield return new WaitForSeconds(activationDelay);
 
-        // Show objects
         foreach (var obj in objectsToActivate)
-        {
-            if (obj != null)
-                obj.SetActive(true);
-        }
+            if (obj) obj.SetActive(true);
 
-        // Hide objects
         foreach (var obj in objectsToHide)
+            if (obj) obj.SetActive(false);
+
+        // If repeatable, allow interaction again
+        if (repeatable)
         {
-            if (obj != null)
-                obj.SetActive(false);
+            dialogueTriggered = false;  // <-- reset so player can talk again
         }
     }
 
@@ -84,7 +79,6 @@ public class NPC : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerInRange = true;
-            // Optional: show "Press E to talk" UI
         }
     }
 
