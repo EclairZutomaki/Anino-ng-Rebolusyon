@@ -23495,7 +23495,7 @@ MonoBehaviour:
   cam: {fileID: 2147010029}
   canvas: {fileID: 709315957}
   hideDistance: 7
-  showDistance: 100
+  showDistance: 500
   clampToScreen: 1
   edgeBuffer: 30
   baseSize: {x: 60, y: 60}
@@ -157156,6 +157156,7 @@ GameObject:
   - component: {fileID: 7085683065022353881}
   - component: {fileID: 6551343238566256431}
   - component: {fileID: 1192463593446128930}
+  - component: {fileID: 8076682355992008784}
   m_Layer: 5
   m_Name: BagManagerCanvas
   m_TagString: Untagged
@@ -162827,6 +162828,23 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &8076682355992008784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3148994325912149145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!114 &8099041469546452875
 MonoBehaviour:
   m_ObjectHideFlags: 0
