@@ -4,7 +4,7 @@ using System.Collections;
 public class ObjectToggleTrigger : MonoBehaviour
 {
     public enum TriggerType { OnKeyPress, OnCollision }
-    public enum ToggleAction { Show, Hide, Toggle }
+    public enum ToggleAction { Show, Hide, Toggle, Delete }
 
     [System.Serializable]
     public class ToggleObject
@@ -109,6 +109,10 @@ public class ObjectToggleTrigger : MonoBehaviour
 
                 case ToggleAction.Toggle:
                     obj.target.SetActive(!obj.target.activeSelf);
+                    break;
+
+                case ToggleAction.Delete:
+                    Destroy(obj.target);
                     break;
             }
         }

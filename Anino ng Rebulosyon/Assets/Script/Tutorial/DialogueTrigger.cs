@@ -2,6 +2,10 @@ using UnityEngine;
 
 public class DialogueTrigger : MonoBehaviour
 {
+    [Header("Speaker")]
+    public string speakerName;    // NEW NAME FIELD
+
+    [Header("Subtitle")]
     [TextArea] public string subtitleText;
     public AudioClip voiceClip;
     [Tooltip("Overrides duration if no voice clip is assigned.")]
@@ -20,10 +24,11 @@ public class DialogueTrigger : MonoBehaviour
 
         if (other.CompareTag("Player"))
         {
-            SubtitleManager.Instance.ShowSubtitle(subtitleText, voiceClip, overrideDuration);
+            // USES THE NEW SHOWSUBTITLE WITH NAME
+            SubtitleManager.Instance.ShowSubtitle(speakerName, subtitleText, voiceClip, overrideDuration);
+
             hasPlayed = true;
 
-            // Only trigger the run tutorial on the last subtitle
             if (triggerRunTutorial)
             {
                 TutorialManager tutorial = Object.FindFirstObjectByType<TutorialManager>();

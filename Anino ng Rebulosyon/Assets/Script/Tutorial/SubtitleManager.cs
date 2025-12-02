@@ -9,6 +9,7 @@ public class SubtitleManager : MonoBehaviour
     [Header("UI References")]
     public Canvas subtitleCanvas;
     public GameObject subtitlePanel;
+    public TextMeshProUGUI speakerNameText;   // NEW
     public TextMeshProUGUI subtitleText;
     public AudioSource audioSource;
 
@@ -28,34 +29,47 @@ public class SubtitleManager : MonoBehaviour
         }
         Instance = this;
 
-        // Optional: make it persist between scenes
         DontDestroyOnLoad(gameObject);
 
         if (subtitlePanel != null)
             subtitlePanel.SetActive(false);
     }
 
-    public void ShowSubtitle(string text, AudioClip voiceClip = null, float overrideDuration = 0f)
+    // --- NEW METHOD WITH NAME ---
+    public void ShowSubtitle(string speakerName, string text, AudioClip voiceClip = null, float overrideDuration = 0f)
     {
         if (activeRoutine != null)
             StopCoroutine(activeRoutine);
 
-        activeRoutine = StartCoroutine(PlaySubtitle(text, voiceClip, overrideDuration));
+        activeRoutine = StartCoroutine(PlaySubtitle(speakerName, text, voiceClip, overrideDuration));
     }
 
-    private IEnumerator PlaySubtitle(string text, AudioClip voiceClip, float overrideDuration)
+    // --- OLD METHOD STILL WORKS (NO NAME) ---
+    public void ShowSubtitle(string text, AudioClip voiceClip = null, float overrideDuration = 0f)
+    {
+        ShowSubtitle("", text, voiceClip, overrideDuration);
+    }
+
+    private IEnumerator PlaySubtitle(string speakerName, string text, AudioClip voiceClip, float overrideDuration)
     {
         if (subtitlePanel == null || subtitleText == null)
             yield break;
 
         subtitlePanel.SetActive(true);
+
+        // Apply text
         subtitleText.text = text;
+
+        // Apply speaker name (if any)
+        if (speakerNameText != null)
+            speakerNameText.text = speakerName;
 
         // Fade in
         yield return StartCoroutine(FadeCanvasGroup(subtitlePanel, 0, 1, fadeDuration));
 
-        // Play audio if there’s one
+        // Play audio if provided
         float duration = overrideDuration > 0 ? overrideDuration : defaultSubtitleDuration;
+
         if (voiceClip)
         {
             audioSource.clip = voiceClip;
