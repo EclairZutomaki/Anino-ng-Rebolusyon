@@ -13,6 +13,9 @@ public class StartMenuController : MonoBehaviour
     public GameObject EkstraPanel;
     public GameObject SettingsPanel;
     public GameObject SimulaPanel;
+    public GameObject DictionaryPanel;
+    public GameObject ChapterPaperPanel;
+
 
 
     public void OpenMainMenu()
@@ -21,6 +24,8 @@ public class StartMenuController : MonoBehaviour
         MainMenuPanel.SetActive(true);
         EkstraPanel.SetActive(false);
         SettingsPanel.SetActive(false);
+        DictionaryPanel.SetActive(false);
+        ChapterPaperPanel.SetActive(false);
     }
     public void OpenSimula()
     {
@@ -28,6 +33,8 @@ public class StartMenuController : MonoBehaviour
         MainMenuPanel.SetActive(false);
         EkstraPanel.SetActive(false);
         SettingsPanel.SetActive(false);
+        DictionaryPanel.SetActive(false);
+        ChapterPaperPanel.SetActive(false);
     }
 
     public void OpenEkstra()
@@ -36,6 +43,8 @@ public class StartMenuController : MonoBehaviour
         MainMenuPanel.SetActive(false);
         EkstraPanel.SetActive(true);
         SettingsPanel.SetActive(false);
+        DictionaryPanel.SetActive(false);
+        ChapterPaperPanel.SetActive(false);
     }
 
     public void OpenSettings()
@@ -44,6 +53,26 @@ public class StartMenuController : MonoBehaviour
         MainMenuPanel.SetActive(false);
         EkstraPanel.SetActive(false);
         SettingsPanel.SetActive(true);
+    }
+
+    public void OpenDictionary()
+    {
+        SimulaPanel.SetActive(false);
+        MainMenuPanel.SetActive(false);
+        EkstraPanel.SetActive(false);
+        SettingsPanel.SetActive(false);
+        DictionaryPanel.SetActive(true);
+        ChapterPaperPanel.SetActive(false);
+    }
+
+    public void OpenChapterPaper()
+    {
+        SimulaPanel.SetActive(false);
+        MainMenuPanel.SetActive(false);
+        EkstraPanel.SetActive(false);
+        SettingsPanel.SetActive(false);
+        DictionaryPanel.SetActive(false);
+        ChapterPaperPanel.SetActive(true);
     }
 
 
