@@ -3,42 +3,24 @@ using UnityEngine.SceneManagement;
 
 public class StartMenuController : MonoBehaviour
 {
-
-    public void OnMagsimula()
+    public void OnGameStart()
     {
         SceneManager.LoadScene("Binondo");
     }
 
-    public GameObject MainMenuPanel;
-    public GameObject EkstraPanel;
-    public GameObject SettingsPanel;
 
-    public void OpenMainMenu()
+    public GameObject[] Panels;
+
+    public void OpenPanel(int panelIndex)
     {
-        MainMenuPanel.SetActive(true);
-        EkstraPanel.SetActive(false);
-        SettingsPanel.SetActive(false);
+        for (int i = 0; i < Panels.Length; i++)
+        {
+            Panels[i].SetActive(i == panelIndex);
+        }
     }
-    public void OpenEkstra()
-    {
-        MainMenuPanel.SetActive(false);
-        EkstraPanel.SetActive(true);
-        SettingsPanel.SetActive(false);
-    }
-
-    public void OpenSettings()
-    {
-        MainMenuPanel.SetActive(false);
-        EkstraPanel.SetActive(false);
-        SettingsPanel.SetActive(true);
-    }
-
-
 
     public void QuitGame()
     {
         Application.Quit();
     }
-  }
-
-
+}
