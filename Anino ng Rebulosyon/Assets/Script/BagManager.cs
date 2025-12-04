@@ -19,7 +19,7 @@ public class BagManager : MonoBehaviour
     public GameObject sideQuestIcon;
 
     [Header("Highlight Settings")]
-    public Color highlightColor = Color.green; // 🎨 Color wheel freedom
+    public Color highlightColor = Color.green;
 
     private void Start()
     {
@@ -46,8 +46,7 @@ public class BagManager : MonoBehaviour
         mapPanel.SetActive(false);
         dictionaryPanel.SetActive(false);
 
-        if (mainQuestIcon) mainQuestIcon.SetActive(false);
-        if (sideQuestIcon) sideQuestIcon.SetActive(false);
+        ToggleMapIcons(false);
     }
 
     public void ShowDocuments()
@@ -80,10 +79,10 @@ public class BagManager : MonoBehaviour
         ToggleMapIcons(false);
     }
 
-    private void HighlightButton(Button activeButton)
+    private void HighlightButton(Button active)
     {
         ResetButtonColors();
-        activeButton.image.color = highlightColor;
+        active.image.color = highlightColor;
     }
 
     private void ResetButtonColors()
@@ -93,9 +92,9 @@ public class BagManager : MonoBehaviour
         dictionaryButton.image.color = Color.white;
     }
 
-    private void ToggleMapIcons(bool show)
+    private void ToggleMapIcons(bool state)
     {
-        if (mainQuestIcon) mainQuestIcon.SetActive(show);
-        if (sideQuestIcon) sideQuestIcon.SetActive(show);
+        if (mainQuestIcon) mainQuestIcon.SetActive(state);
+        if (sideQuestIcon) sideQuestIcon.SetActive(state);
     }
 }
