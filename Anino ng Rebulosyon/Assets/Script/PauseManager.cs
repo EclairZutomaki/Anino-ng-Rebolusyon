@@ -47,6 +47,13 @@ public class PauseManager : MonoBehaviour
 
     private void SaveGame()
     {
-        Debug.Log("Save feature coming soon...");
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        Vector3 pos = player.transform.position;
+
+        string sceneName = SceneManager.GetActiveScene().name;
+
+        SavingSystem.SavePlayer(pos, sceneName);
+
+        Debug.Log("Game Saved!");
     }
 }

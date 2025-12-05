@@ -21,6 +21,17 @@ public class BagManager : MonoBehaviour
     [Header("Highlight Settings")]
     public Color highlightColor = Color.green;
 
+    // --------------------------
+    // NEW: Document Page System
+    // --------------------------
+    [Header("Document Pages")]
+    public GameObject[] documentImages;   // assign your document images/pages here
+    public Button nextButton;             // NEXT button
+    public Button previousButton;         // PREV button
+
+    private int currentIndex = 0;
+    // --------------------------
+
     private void Start()
     {
         bagUI.SetActive(false);
@@ -30,6 +41,14 @@ public class BagManager : MonoBehaviour
 
         if (mainQuestIcon) mainQuestIcon.SetActive(false);
         if (sideQuestIcon) sideQuestIcon.SetActive(false);
+
+        if (nextButton != null)
+            nextButton.onClick.AddListener(NextPage);
+
+        if (previousButton != null)
+            previousButton.onClick.AddListener(PreviousPage);
+
+        UpdateDocumentPages();
     }
 
     public void ShowBag()
@@ -57,6 +76,9 @@ public class BagManager : MonoBehaviour
 
         HighlightButton(documentsButton);
         ToggleMapIcons(false);
+
+        currentIndex = 0;
+        UpdateDocumentPages();
     }
 
     public void ShowMap()
@@ -96,5 +118,40 @@ public class BagManager : MonoBehaviour
     {
         if (mainQuestIcon) mainQuestIcon.SetActive(state);
         if (sideQuestIcon) sideQuestIcon.SetActive(state);
+    }
+
+    // --------------------------
+    // PAGE SWITCHING FUNCTIONS
+    // --------------------------
+    private void UpdateDocumentPages()
+    {
+        if (documentImages == null || documentImages.Length == 0) return;
+
+        for (int i = 0; i < documentImages.Length; i++)
+            documentImages[i].SetActive(i == currentIndex);
+    }
+
+    public void NextPage()
+    {
+        if (documentImages == null || documentImages.Length == 0) return;
+
+        currentIndex++;
+
+        if (currentIndex >= documentImages.Length)
+            currentIndex = documentImages.Length - 1; // stops at last page
+
+        UpdateDocumentPages();
+    }
+
+    public void PreviousPage()
+    {
+        if (documentImages == null || documentImages.Length == 0) return;
+
+        currentIndex--;
+
+        if (currentIndex < 0)
+            currentIndex = 0; // stops at first page
+
+        UpdateDocumentPages();
     }
 }
