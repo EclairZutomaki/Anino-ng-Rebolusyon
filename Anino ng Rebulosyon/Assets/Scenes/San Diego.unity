@@ -14,10 +14,10 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 10
-  m_Fog: 0
-  m_FogColor: {r: 1, g: 0.9811321, b: 0.97062534, a: 1}
+  m_Fog: 1
+  m_FogColor: {r: 0.5471698, g: 0.5471698, b: 0.5471698, a: 1}
   m_FogMode: 3
-  m_FogDensity: 0.008
+  m_FogDensity: 0.003
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
@@ -59099,6 +59099,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WaterBlock_50m (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 1507636620937791839, guid: 7097ba7ba649e1f41bba232312bdcbd8, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 46ce82dbf51723c458888421c3f94c00, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -204080,6 +204084,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 969487464}
     m_Modifications:
+    - target: {fileID: 93339868581997290, guid: ca5cc58ffa3a4b84491cd22d0175d769, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 127056832416429242, guid: ca5cc58ffa3a4b84491cd22d0175d769, type: 3}
       propertyPath: m_Name
       value: Umaga
@@ -205862,6 +205870,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7669946679347632616, guid: 734c5645b60d881489c28ac90d6a56db, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8570119722856722351, guid: 734c5645b60d881489c28ac90d6a56db, type: 3}
       propertyPath: m_Name
       value: Tanghali
@@ -207407,6 +207419,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lamesa (1)
       objectReference: {fileID: 0}
+    - target: {fileID: -8098169881513260187, guid: a02a1e83723c1674393228b376b9cc75, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3447742079981357586, guid: a02a1e83723c1674393228b376b9cc75, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6.885681
@@ -207445,6 +207461,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3447742079981357586, guid: a02a1e83723c1674393228b376b9cc75, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7596054609887090473, guid: a02a1e83723c1674393228b376b9cc75, type: 3}
+      propertyPath: m_CastShadows
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7596054609887090473, guid: a02a1e83723c1674393228b376b9cc75, type: 3}
+      propertyPath: m_StaticShadowCaster
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

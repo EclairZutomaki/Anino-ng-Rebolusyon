@@ -14,10 +14,10 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 10
-  m_Fog: 0
+  m_Fog: 1
   m_FogColor: {r: 0.6509434, g: 0.6509434, b: 0.6509434, a: 1}
   m_FogMode: 3
-  m_FogDensity: 0.049
+  m_FogDensity: 0.005
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
@@ -5397,13 +5397,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueLines:
   - speakerName: 'TINYENTE GUEVERRA  '
-    lineText: "Ikararangal ni Don Rafael ang iyong pagbabalik. Maligayang pagdating,
-      Cris\xF3stomo."
-    voiceClip: {fileID: 0}
+    lineText: "Ikararangal ka ni Don Rafael. \r\nMaligayang pagbabalik, Crisostomo.\r"
+    voiceClip: {fileID: 8300000, guid: 69bda7cc4ea0f944697675f5ae4e8baa, type: 3}
   - speakerName: CRISOSTOMO IBARRA
-    lineText: "Maraming salamat po, Tinyente. Kagalakan ko pong kayo\u2019y muling
-      makita."
-    voiceClip: {fileID: 0}
+    lineText: "Maraming salamat po, Tinyente.\r\nIkinatutuwa kong muli ko kayong
+      makita.\r"
+    voiceClip: {fileID: 8300000, guid: 6e2fa086240fab64f85febbe1c0cb900, type: 3}
   repeatable: 1
   objectsToActivate: []
   objectsToHide: []
@@ -10515,14 +10514,14 @@ MonoBehaviour:
   dialogueLines:
   - speakerName: PADRE DAMASO
     lineText: "Dapat sana\u2019y nagpadala ka muna ng sulat bago ka bumalik."
-    voiceClip: {fileID: 0}
+    voiceClip: {fileID: 8300000, guid: 9b7bfdced687752469f75ee31dd46766, type: 3}
   - speakerName: CRISOSTOMO IBARRA
-    lineText: "Patawad po, Padre. Nais ko sanang kayo\u2019y sorpresahin. Mabubuting
-      layon ang aking dala."
-    voiceClip: {fileID: 0}
+    lineText: Patawad po Padre. Nais ko lamang kayong sorpresahin. Wala po akong
+      dalang masama, pawang mabuting layunin lamang.
+    voiceClip: {fileID: 8300000, guid: df012025e46049045aabf49b2e891277, type: 3}
   - speakerName: PADRE DAMASO
     lineText: Hmmmp!
-    voiceClip: {fileID: 0}
+    voiceClip: {fileID: 8300000, guid: 4647399860cd429458ee47e8f6f6bc9d, type: 3}
   repeatable: 1
   objectsToActivate: []
   objectsToHide: []
@@ -78785,6 +78784,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7596054609887090473, guid: 00dedc34e8aaddf47b8d02b71146f3a6, type: 3}
+      propertyPath: m_MotionVectors
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7596054609887090473, guid: 00dedc34e8aaddf47b8d02b71146f3a6, type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7596054609887090473, guid: 00dedc34e8aaddf47b8d02b71146f3a6, type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -100473,7 +100484,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1334308420
 RectTransform:
   m_ObjectHideFlags: 0
@@ -116786,7 +116797,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1651241659
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -134094,12 +134105,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueLines:
   - speakerName: KAPITAN TIAGO
-    lineText: "Crisostomo! Aba\u2019y tunay kang naging isang kagalang-galang na
-      binata!"
-    voiceClip: {fileID: 0}
+    lineText: "Crisostomo! Lalaki ka na\u2019t tunay na maginoo!"
+    voiceClip: {fileID: 8300000, guid: 606e360271df4154e9be224ca41d70d0, type: 3}
   - speakerName: CRISOSTOMO IBARRA
-    lineText: Maraming salamat, Kapitan Tiago. Kagalakan kong muling makita ang lahat.
-    voiceClip: {fileID: 0}
+    lineText: Maraming salamat, Kapitan Tiago. Ikinagalakan kong muling makita kayong
+      lahat.
+    voiceClip: {fileID: 8300000, guid: d875cb4e18a0af44b996ac7cf5179951, type: 3}
   repeatable: 1
   objectsToActivate: []
   objectsToHide: []
@@ -154813,7 +154824,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2111894418
 RectTransform:
   m_ObjectHideFlags: 0
@@ -154848,7 +154859,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.74509805}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.8235294}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -162818,6 +162829,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DialogueManager
       objectReference: {fileID: 0}
+    - target: {fileID: 1776742447931665199, guid: 324e55084d361de48b9e6dc421c8b286, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5892208070872475366, guid: 324e55084d361de48b9e6dc421c8b286, type: 3}
       propertyPath: m_LocalPosition.x
       value: -485.498
@@ -162951,6 +162966,10 @@ PrefabInstance:
     - target: {fileID: 548637905575654171, guid: 31724183167fcb940a1798319350ff97, type: 3}
       propertyPath: m_Name
       value: SubtitleCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 548637905575654171, guid: 31724183167fcb940a1798319350ff97, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1626868695718973134, guid: 31724183167fcb940a1798319350ff97, type: 3}
       propertyPath: m_Pivot.x
@@ -171094,6 +171113,10 @@ PrefabInstance:
     - target: {fileID: 3607132197377791758, guid: e560286101ae84040a06704dc96074e3, type: 3}
       propertyPath: m_Name
       value: BagManagerCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 3607132197377791758, guid: e560286101ae84040a06704dc96074e3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3692426467018845470, guid: e560286101ae84040a06704dc96074e3, type: 3}
       propertyPath: nextButton
