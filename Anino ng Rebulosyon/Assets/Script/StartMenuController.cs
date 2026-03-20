@@ -1,8 +1,18 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class StartMenuController : MonoBehaviour
+public class Kabanata : MonoBehaviour
 {
+    public GameObject[] Panels;
+
+    private int currentPanelIndex = 0;
+
+    private void Start()
+    {
+        // Ensure default panel is shown
+        OpenPanel(currentPanelIndex);
+    }
+
     public void OnGameStart()
     {
         SceneManager.LoadScene("Binondo");
@@ -18,21 +28,46 @@ public class StartMenuController : MonoBehaviour
             return;
         }
 
-        // Load saved scene
         SceneManager.LoadScene(data.sceneName);
 
-        // After scene loads, we need to spawn the player in saved position
-        PlayerSpawner.LoadPosition = new Vector3(data.position[0], data.position[1], data.position[2]);
+        PlayerSpawner.LoadPosition = new Vector3(
+            data.position[0],
+            data.position[1],
+            data.position[2]
+        );
     }
-
-    public GameObject[] Panels;
 
     public void OpenPanel(int panelIndex)
     {
+        currentPanelIndex = panelIndex;
+
         for (int i = 0; i < Panels.Length; i++)
         {
-            Panels[i].SetActive(i == panelIndex);
+            Panels[i].SetActive(i == currentPanelIndex);
         }
+    }
+
+    // NEXT (+1)
+    public void NextPanel()
+    {
+        currentPanelIndex++;
+
+        // Clamp so it doesn't go out of bounds
+        if (currentPanelIndex >= Panels.Length)
+            currentPanelIndex = Panels.Length - 1;
+
+        OpenPanel(currentPanelIndex);
+    }
+
+    // PREVIOUS (-1)
+    public void PreviousPanel()
+    {
+        currentPanelIndex--;
+
+        if (currentPanelIndex < 0)
+            currentPanelIndex = 0;
+
+        OpenPanel(currentPanelIndex);
     }
 
     public void QuitGame()
