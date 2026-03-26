@@ -3,6 +3,10 @@ using UnityEngine.UI;
 
 public class BagManager : MonoBehaviour
 {
+    [Header("Extra Object")]
+    public GameObject objectToHide; // assign in Inspector
+
+
     [Header("UI PANELS")]
     public GameObject bagUI;
     public GameObject documentsPanel;
@@ -49,6 +53,15 @@ public class BagManager : MonoBehaviour
             previousButton.onClick.AddListener(PreviousPage);
 
         UpdateDocumentPages();
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            if (objectToHide != null)
+                objectToHide.SetActive(false);
+        }
     }
 
     public void ShowBag()
