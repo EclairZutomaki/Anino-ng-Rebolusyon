@@ -6394,7 +6394,7 @@ PrefabInstance:
       addedObject: {fileID: 2124469024}
     - targetCorrespondingSourceObject: {fileID: -8098169881513260187, guid: 06313807f72d0704eaee2409cf1242d6, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2124469028}
+      addedObject: {fileID: 2124469025}
   m_SourcePrefab: {fileID: 3150474306388093854, guid: 06313807f72d0704eaee2409cf1242d6, type: 3}
 --- !u!4 &116123657 stripped
 Transform:
@@ -112213,7 +112213,7 @@ PrefabInstance:
       addedObject: {fileID: 1628854825}
     - targetCorrespondingSourceObject: {fileID: -8098169881513260187, guid: 06313807f72d0704eaee2409cf1242d6, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1628854829}
+      addedObject: {fileID: 1628854826}
   m_SourcePrefab: {fileID: 3150474306388093854, guid: 06313807f72d0704eaee2409cf1242d6, type: 3}
 --- !u!1 &1544654029 stripped
 GameObject:
@@ -116376,7 +116376,7 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 8
   m_Center: {x: -0.003940525, y: 0.0011115076, z: -0.0017224335}
---- !u!114 &1628854829
+--- !u!114 &1628854826
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -116385,25 +116385,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1628854824}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37902d4e0885eeb42a9ccc1b89b3fdf5, type: 3}
+  m_Script: {fileID: 11500000, guid: 225c88702d077dd428808c7045fa27fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerType: 0
-  triggerKey: 101
-  allowedTags:
-  - Player
-  objectsToToggle:
-  - target: {fileID: 3153657}
-    action: 0
-    showDelay: 0
-    hideDelay: 0
-  - target: {fileID: 1403308479}
-    action: 0
-    showDelay: 0
-    hideDelay: 0
-  startHidden: 0
-  destroyAfterTrigger: 1
-  destroyDelay: 0
+  paperID: 
+  interactKey: 101
 --- !u!4 &1630422584 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3447742079981357586, guid: 37dc99147b293254b8ec62c73bddbf01, type: 3}
@@ -129835,7 +129821,7 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 7
   m_Center: {x: -0.003940525, y: 0.0011115076, z: -0.0017224335}
---- !u!114 &1803418994
+--- !u!114 &1803418991
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -129844,25 +129830,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1803418989}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37902d4e0885eeb42a9ccc1b89b3fdf5, type: 3}
+  m_Script: {fileID: 11500000, guid: 225c88702d077dd428808c7045fa27fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerType: 0
-  triggerKey: 101
-  allowedTags:
-  - Player
-  objectsToToggle:
-  - target: {fileID: 1463206049}
-    action: 0
-    showDelay: 0
-    hideDelay: 0
-  - target: {fileID: 461999711}
-    action: 0
-    showDelay: 0
-    hideDelay: 0
-  startHidden: 0
-  destroyAfterTrigger: 1
-  destroyDelay: 0
+  paperID: 
+  interactKey: 101
 --- !u!4 &1804050052 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3447742079981357586, guid: 84ef4fa6b208fad49a20ce407d30314e, type: 3}
@@ -149765,7 +149737,7 @@ PrefabInstance:
       addedObject: {fileID: 1803418990}
     - targetCorrespondingSourceObject: {fileID: -8098169881513260187, guid: 06313807f72d0704eaee2409cf1242d6, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1803418994}
+      addedObject: {fileID: 1803418991}
   m_SourcePrefab: {fileID: 3150474306388093854, guid: 06313807f72d0704eaee2409cf1242d6, type: 3}
 --- !u!1 &2030493236
 GameObject:
@@ -159425,7 +159397,7 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 7
   m_Center: {x: -0.003940525, y: 0.0011115076, z: -0.0017224335}
---- !u!114 &2124469028
+--- !u!114 &2124469025
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -159434,29 +159406,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2124469023}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37902d4e0885eeb42a9ccc1b89b3fdf5, type: 3}
+  m_Script: {fileID: 11500000, guid: 225c88702d077dd428808c7045fa27fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerType: 0
-  triggerKey: 101
-  allowedTags:
-  - Player
-  objectsToToggle:
-  - target: {fileID: 1824403990}
-    action: 0
-    showDelay: 0
-    hideDelay: 0
-  - target: {fileID: 421718460}
-    action: 0
-    showDelay: 0
-    hideDelay: 0
-  - target: {fileID: 2028998091}
-    action: 0
-    showDelay: 0
-    hideDelay: 0
-  startHidden: 0
-  destroyAfterTrigger: 1
-  destroyDelay: 0
+  paperID: 
+  interactKey: 101
 --- !u!1001 &2126734491
 PrefabInstance:
   m_ObjectHideFlags: 0
