@@ -92,6 +92,22 @@ MonoBehaviour:
   m_OpenClipOffsetRotation: {x: 0, y: 0, z: 0, w: 1}
   m_Rotation: {x: 0, y: 0, z: 0, w: 1}
   m_ApplyOffsets: 0
+--- !u!114 &-7987116138065471652
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4d683f551d33a84db12bb6fa65573f9, type: 3}
+  m_Name: TextSwitcherClip(Clone)(Clone)
+  m_EditorClassIdentifier: 
+  template:
+    color: {r: 0, g: 0, b: 0, a: 1}
+    fontSize: 42
+    text: 'Darating na siya anumang sandali. '
 --- !u!74 &-7903588344762403306
 AnimationClip:
   m_ObjectHideFlags: 0
@@ -1631,10 +1647,9 @@ MonoBehaviour:
   m_Name: TextSwitcherClip(Clone)(Clone)
   m_EditorClassIdentifier: 
   template:
-    color: {r: 0.20784314, g: 0.22745098, b: 0.6039216, a: 1}
-    fontSize: 40
-    text: 'Hmmmph. Ibarra. Anak ni Don Rafael.  Hindi ako nagtitiwala sa mga batang
-      pinalaki lang ng mga libro. '
+    color: {r: 0, g: 0, b: 0, a: 1}
+    fontSize: 42
+    text: 'Hmmmph. '
 --- !u!114 &-1108445412870139600
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1648,10 +1663,16 @@ MonoBehaviour:
   m_Name: TextSwitcherClip
   m_EditorClassIdentifier: 
   template:
+<<<<<<< Updated upstream
     color: {r: 0.20784314, g: 0.22745098, b: 0.6039216, a: 1}
     fontSize: 40
     text: "Magpakasaya muna kayo, mga ginoo\u2019t ginang. Siya\u2019y darating na
       rin sa ilang sandali."
+=======
+    color: {r: 0, g: 0, b: 0, a: 1}
+    fontSize: 42
+    text: 'Mangyaring magpakasaya muna kayo.  '
+>>>>>>> Stashed changes
 --- !u!114 &-1092881111055088984
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1776,7 +1797,7 @@ MonoBehaviour:
   m_Name: TextSwitcherClip
   m_EditorClassIdentifier: 
   template:
-    color: {r: 0, g: 0, b: 0, a: 1}
+    color: {r: 0.8584906, g: 0.3783966, b: 0, a: 1}
     fontSize: 50
     text: KAPITAN TIAGO
 --- !u!114 &-561802471466555102
@@ -1841,9 +1862,9 @@ MonoBehaviour:
   m_Name: TextSwitcherClip(Clone)(Clone)(Clone)(Clone)
   m_EditorClassIdentifier: 
   template:
-    color: {r: 0.20784314, g: 0.22745098, b: 0.6039216, a: 1}
-    fontSize: 40
-    text: 'Ano kaya ang mga natutunan niya sa Europa  na balak niyang ipatupad dito? '
+    color: {r: 0, g: 0, b: 0, a: 1}
+    fontSize: 42
+    text: 'Ano kaya ang mga natutunan niya sa Europa na balak niyang ipatupad dito? '
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1884,8 +1905,8 @@ MonoBehaviour:
   m_Name: TextSwitcherClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
   m_EditorClassIdentifier: 
   template:
-    color: {r: 0.20784314, g: 0.22745098, b: 0.6039216, a: 1}
-    fontSize: 40
+    color: {r: 0, g: 0, b: 0, a: 1}
+    fontSize: 42
     text: Baka may balak siyang baguhin ang lahat ng nakasanayan natin.
 --- !u!114 &653789101707232788
 MonoBehaviour:
@@ -1909,6 +1930,42 @@ MonoBehaviour:
   m_Loop: 1
   m_Version: 1
   m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+<<<<<<< Updated upstream
+=======
+--- !u!114 &668048190753419924
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4d683f551d33a84db12bb6fa65573f9, type: 3}
+  m_Name: TextSwitcherClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
+  m_EditorClassIdentifier: 
+  template:
+    color: {r: 0, g: 0, b: 0, a: 1}
+    fontSize: 42
+    text: 'Ibarra. '
+--- !u!114 &1114517849354558165
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f10dd60657c6004587f237a7e90f8e4, type: 3}
+  m_Name: AudioPlayableAsset
+  m_EditorClassIdentifier: 
+  m_Clip: {fileID: 8300000, guid: 254749497709d9548ad124bf190e664e, type: 3}
+  m_Loop: 0
+  m_bufferingTime: 0.1
+  m_ClipProperties:
+    volume: 1
+>>>>>>> Stashed changes
 --- !u!114 &1198147547679049827
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1934,7 +1991,11 @@ MonoBehaviour:
     m_Start: 0
     m_ClipIn: 0
     m_Asset: {fileID: -1108445412870139600}
+<<<<<<< Updated upstream
     m_Duration: 4.516666666666667
+=======
+    m_Duration: 3.7108398471027613
+>>>>>>> Stashed changes
     m_TimeScale: 1
     m_ParentTrack: {fileID: 1198147547679049827}
     m_EaseInDuration: 0
@@ -1985,7 +2046,11 @@ MonoBehaviour:
     m_Start: 5.733333396911621
     m_ClipIn: 0
     m_Asset: {fileID: -1778843302853647486}
+<<<<<<< Updated upstream
     m_Duration: 6.933333269755045
+=======
+    m_Duration: 0.9499999999999993
+>>>>>>> Stashed changes
     m_TimeScale: 1
     m_ParentTrack: {fileID: 1198147547679049827}
     m_EaseInDuration: 0
@@ -2085,6 +2150,156 @@ MonoBehaviour:
     m_ClipIn: 0
     m_Asset: {fileID: 2070034210948557535}
     m_Duration: 4.583333333333332
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: 1198147547679049827}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: -1
+    m_BlendOutDuration: -1
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 0
+    m_PreExtrapolationTime: 0
+    m_DisplayName: TextSwitcherClip
+  - m_Version: 1
+    m_Start: 3.716666666666667
+    m_ClipIn: 0
+    m_Asset: {fileID: -7987116138065471652}
+    m_Duration: 2.5083333333333337
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: 1198147547679049827}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: -1
+    m_BlendOutDuration: -1
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 0
+    m_PreExtrapolationTime: 0
+    m_DisplayName: TextSwitcherClip
+  - m_Version: 1
+    m_Start: 7.866666666666666
+    m_ClipIn: 0
+    m_Asset: {fileID: 668048190753419924}
+    m_Duration: 0.8833333333333337
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: 1198147547679049827}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: -1
+    m_BlendOutDuration: -1
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 0
+    m_PreExtrapolationTime: 0
+    m_DisplayName: TextSwitcherClip
+  - m_Version: 1
+    m_Start: 8.75
+    m_ClipIn: 0
+    m_Asset: {fileID: 4693363867218574256}
+    m_Duration: 1.7333333333333325
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: 1198147547679049827}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: -1
+    m_BlendOutDuration: -1
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 0
+    m_PreExtrapolationTime: 0
+    m_DisplayName: TextSwitcherClip
+  - m_Version: 1
+    m_Start: 10.483333333333333
+    m_ClipIn: 0
+    m_Asset: {fileID: 7367703308039642437}
+    m_Duration: 4.72395918367347
     m_TimeScale: 1
     m_ParentTrack: {fileID: 1198147547679049827}
     m_EaseInDuration: 0
@@ -2537,8 +2752,8 @@ MonoBehaviour:
   m_Name: TextSwitcherClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
   m_EditorClassIdentifier: 
   template:
-    color: {r: 0.20784314, g: 0.22745098, b: 0.6039216, a: 1}
-    fontSize: 40
+    color: {r: 0, g: 0, b: 0, a: 1}
+    fontSize: 42
     text: Ahh... Sa wakas, narito na siya.
 --- !u!114 &2089393661771199992
 MonoBehaviour:
@@ -2712,6 +2927,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fde0d25a170598d46a0b9dc16b4527a5, type: 3}
   m_Name: ActivationPlayableAsset
   m_EditorClassIdentifier: 
+--- !u!114 &4693363867218574256
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4d683f551d33a84db12bb6fa65573f9, type: 3}
+  m_Name: TextSwitcherClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
+  m_EditorClassIdentifier: 
+  template:
+    color: {r: 0, g: 0, b: 0, a: 1}
+    fontSize: 42
+    text: 'Anak ni Don Rafael.  '
 --- !u!114 &4710261899614723573
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3216,6 +3447,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fde0d25a170598d46a0b9dc16b4527a5, type: 3}
   m_Name: ActivationPlayableAsset(Clone)
   m_EditorClassIdentifier: 
+--- !u!114 &7367703308039642437
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4d683f551d33a84db12bb6fa65573f9, type: 3}
+  m_Name: TextSwitcherClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
+  m_EditorClassIdentifier: 
+  template:
+    color: {r: 0, g: 0, b: 0, a: 1}
+    fontSize: 42
+    text: 'Hindi ako nagtitiwala sa mga batang pinalaki lang ng mga libro. '
 --- !u!114 &7838740029533394349
 MonoBehaviour:
   m_ObjectHideFlags: 1
