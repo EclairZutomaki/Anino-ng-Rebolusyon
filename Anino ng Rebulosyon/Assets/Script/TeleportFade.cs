@@ -6,7 +6,7 @@ using System.Collections;
 public class TeleportFade : MonoBehaviour
 {
     [Header("References")]
-    public Transform player; // 👈 DRAG YOUR PLAYER HERE (IMPORTANT)
+    public Transform player; // 👈 DRAG PLAYER HERE
     public Transform teleportDestination;
     public Image fadeImage;
     public float fadeDuration = 1f;
@@ -24,7 +24,6 @@ public class TeleportFade : MonoBehaviour
 
     void Start()
     {
-        // Start transparent
         if (fadeImage != null)
         {
             Color c = fadeImage.color;
@@ -46,8 +45,25 @@ public class TeleportFade : MonoBehaviour
         isTransitioning = true;
         hasJustTeleported = true;
 
-        // 🔒 Freeze player safely (NO SetActive)
+        // 🔒 Freeze player
         StarterAssets.ThirdPersonController.dialogue = true;
+
+        // 🧼 CLEAR INPUT (FIXES STUCK WALKING)
+        var input = player.GetComponent<StarterAssets.StarterAssetsInputs>();
+        if (input != null)
+        {
+            input.move = Vector2.zero;
+            input.look = Vector2.zero;
+            input.jump = false;
+            input.sprint = false;
+        }
+
+        // 🧼 RESET ANIMATION (FIXES WALK ANIMATION STUCK)
+        Animator anim = player.GetComponentInChildren<Animator>();
+        if (anim != null)
+        {
+            anim.SetFloat("Speed", 0f);
+        }
 
         // 1️⃣ Fade to black
         yield return StartCoroutine(Fade(0, 1));
