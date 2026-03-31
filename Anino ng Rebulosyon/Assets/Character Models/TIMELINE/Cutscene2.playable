@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: TextSwitcherClip(Clone)
   m_EditorClassIdentifier: 
   template:
-    color: {r: 0.20784314, g: 0.22745098, b: 0.6039216, a: 1}
+    color: {r: 0, g: 0, b: 0, a: 1}
     fontSize: 40
     text: 'Ahem! Matagal ko nang pinaglilingkuran ang pamilyang ito. Sa palagay ko,
       nararapat sa akin ang upuang ito sa unahan. '
@@ -52,7 +52,7 @@ MonoBehaviour:
   m_Name: TextSwitcherClip(Clone)
   m_EditorClassIdentifier: 
   template:
-    color: {r: 0, g: 0, b: 0, a: 1}
+    color: {r: 0.78431374, g: 0, b: 0.49411765, a: 1}
     fontSize: 50
     text: "DO\xD1A VICTORINA"
 --- !u!114 &-8979964741029209715
@@ -68,7 +68,7 @@ MonoBehaviour:
   m_Name: TextSwitcherClip(Clone)
   m_EditorClassIdentifier: 
   template:
-    color: {r: 0.20784314, g: 0.22745098, b: 0.6039216, a: 1}
+    color: {r: 0, g: 0, b: 0, a: 1}
     fontSize: 40
     text: Sa mga taon ko sa ibang bansa, nakita ko na ang isang bayan ay dapat mamahala
       sa sarili nito.
@@ -1601,13 +1601,49 @@ MonoBehaviour:
     m_BlendOutDuration: 0.537210199236867
     m_MixInCurve:
       serializedVersion: 2
-      m_Curve: []
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
     m_MixOutCurve:
       serializedVersion: 2
-      m_Curve: []
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -1640,7 +1676,25 @@ MonoBehaviour:
       m_RotationOrder: 4
     m_MixOutCurve:
       serializedVersion: 2
-      m_Curve: []
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -1667,7 +1721,25 @@ MonoBehaviour:
     m_BlendOutDuration: -1
     m_MixInCurve:
       serializedVersion: 2
-      m_Curve: []
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -2818,7 +2890,7 @@ MonoBehaviour:
   m_Name: TextSwitcherClip(Clone)
   m_EditorClassIdentifier: 
   template:
-    color: {r: 0, g: 0, b: 0, a: 1}
+    color: {r: 0.92156863, g: 1, b: 0, a: 1}
     fontSize: 50
     text: KAPITAN TIAGO
 --- !u!114 &-6790858366897981926
@@ -3991,7 +4063,7 @@ MonoBehaviour:
   m_Name: TextSwitcherClip(Clone)
   m_EditorClassIdentifier: 
   template:
-    color: {r: 0, g: 0, b: 0, a: 1}
+    color: {r: 0.39607844, g: 0.18431373, b: 0.015686275, a: 1}
     fontSize: 50
     text: PADRE DAMASO
 --- !u!114 &-5857529191702450978
@@ -4031,7 +4103,7 @@ MonoBehaviour:
   m_Name: TextSwitcherClip(Clone)
   m_EditorClassIdentifier: 
   template:
-    color: {r: 0, g: 0, b: 0, a: 1}
+    color: {r: 0.5882353, g: 0, b: 0.6039216, a: 1}
     fontSize: 50
     text: DON TIBURCIO
 --- !u!114 &-5552885645063059106
@@ -4912,10 +4984,10 @@ MonoBehaviour:
   m_Name: TextSwitcherClip(Clone)
   m_EditorClassIdentifier: 
   template:
-    color: {r: 0.20784314, g: 0.22745098, b: 0.6039216, a: 1}
+    color: {r: 0, g: 0, b: 0, a: 1}
     fontSize: 40
-    text: "Ang pag-unlad ay nagsisimula sa edukasyon \u2014 at sa pagtitiwala sa
-      sariling bayan. "
+    text: 'Ang pag-unlad ay nagsisimula sa edukasyon  at sa pagtitiwala sa sariling
+      bayan. '
 --- !u!114 &-4801334881939357255
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4992,7 +5064,7 @@ MonoBehaviour:
   m_Name: TextSwitcherClip(Clone)
   m_EditorClassIdentifier: 
   template:
-    color: {r: 0.20784314, g: 0.22745098, b: 0.6039216, a: 1}
+    color: {r: 0, g: 0, b: 0, a: 1}
     fontSize: 40
     text: "Hindi, hindi, Ibarra\u2014ang gabing ito\u2019y para sa iyo."
 --- !u!114 &-3822287522515063434
@@ -5030,13 +5102,49 @@ MonoBehaviour:
     m_BlendOutDuration: 0.8333333333333428
     m_MixInCurve:
       serializedVersion: 2
-      m_Curve: []
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
     m_MixOutCurve:
       serializedVersion: 2
-      m_Curve: []
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -5221,7 +5329,7 @@ MonoBehaviour:
   m_Name: TextSwitcherClip(Clone)(Clone)
   m_EditorClassIdentifier: 
   template:
-    color: {r: 0, g: 0, b: 0, a: 1}
+    color: {r: 0, g: 0.14117648, b: 1, a: 1}
     fontSize: 50
     text: 'CRISOSTOMO '
 --- !u!114 &-3491830203410020442
@@ -5237,7 +5345,7 @@ MonoBehaviour:
   m_Name: TextSwitcherClip(Clone)
   m_EditorClassIdentifier: 
   template:
-    color: {r: 0.20784314, g: 0.22745098, b: 0.6039216, a: 1}
+    color: {r: 0, g: 0, b: 0, a: 1}
     fontSize: 40
     text: O-o-oo, tama ang asawa ko.
 --- !u!114 &-3445316561158471094
@@ -5253,7 +5361,7 @@ MonoBehaviour:
   m_Name: TextSwitcherClip(Clone)
   m_EditorClassIdentifier: 
   template:
-    color: {r: 0.20784314, g: 0.22745098, b: 0.6039216, a: 1}
+    color: {r: 0, g: 0, b: 0, a: 1}
     fontSize: 40
     text: "Kung maaari po\u2026 kailangan ko nang umalis ng maaga."
 --- !u!114 &-3383522869978647787
@@ -5362,7 +5470,7 @@ MonoBehaviour:
   m_Name: TextSwitcherClip
   m_EditorClassIdentifier: 
   template:
-    color: {r: 0.20784314, g: 0.22745098, b: 0.6039216, a: 1}
+    color: {r: 0, g: 0, b: 0, a: 1}
     fontSize: 40
     text: Marahil sa susunod na pagkakataon.  Magandang gabi po.
 --- !u!114 &-3087738499213172971
@@ -5721,13 +5829,49 @@ MonoBehaviour:
     m_BlendOutDuration: 0.5500000000000007
     m_MixInCurve:
       serializedVersion: 2
-      m_Curve: []
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
     m_MixOutCurve:
       serializedVersion: 2
-      m_Curve: []
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -5754,13 +5898,49 @@ MonoBehaviour:
     m_BlendOutDuration: 0.283333333333335
     m_MixInCurve:
       serializedVersion: 2
-      m_Curve: []
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
     m_MixOutCurve:
       serializedVersion: 2
-      m_Curve: []
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -5787,7 +5967,25 @@ MonoBehaviour:
     m_BlendOutDuration: -1
     m_MixInCurve:
       serializedVersion: 2
-      m_Curve: []
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -6704,7 +6902,25 @@ MonoBehaviour:
       m_RotationOrder: 4
     m_MixOutCurve:
       serializedVersion: 2
-      m_Curve: []
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -6731,7 +6947,25 @@ MonoBehaviour:
     m_BlendOutDuration: -1
     m_MixInCurve:
       serializedVersion: 2
-      m_Curve: []
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -6886,7 +7120,7 @@ MonoBehaviour:
   m_Name: TextSwitcherClip(Clone)(Clone)
   m_EditorClassIdentifier: 
   template:
-    color: {r: 0.20784314, g: 0.22745098, b: 0.6039216, a: 1}
+    color: {r: 0, g: 0, b: 0, a: 1}
     fontSize: 40
     text: 'Kapitan Tiago, kayo na po ang  maupo rito sa aking pwesto. '
 --- !u!114 &-1586513248832146328
@@ -7450,10 +7684,10 @@ MonoBehaviour:
   m_Name: TextSwitcherClip(Clone)
   m_EditorClassIdentifier: 
   template:
-    color: {r: 0.20784314, g: 0.22745098, b: 0.6039216, a: 1}
+    color: {r: 0, g: 0, b: 0, a: 1}
     fontSize: 40
-    text: "Ay, palagi kong sinasabi\u2014likas na may talento ang mga Pilipino. Lalo
-      na \u2018yung mga guwapo. "
+    text: "Ay, palagi kong sinasabi likas na may talento ang mga Pilipino. Lalo na
+      \u2018yung mga magaganda't guwapo. "
 --- !u!114 &-545813334271543111
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7523,7 +7757,7 @@ MonoBehaviour:
   m_Name: TextSwitcherClip(Clone)
   m_EditorClassIdentifier: 
   template:
-    color: {r: 0.20784314, g: 0.22745098, b: 0.6039216, a: 1}
+    color: {r: 0, g: 0, b: 0, a: 1}
     fontSize: 40
     text: Bah! Bah! Bah!
 --- !u!114 &-29740763523733090
@@ -7689,7 +7923,7 @@ MonoBehaviour:
   m_Name: TextSwitcherClip
   m_EditorClassIdentifier: 
   template:
-    color: {r: 0, g: 0, b: 0, a: 1}
+    color: {r: 0, g: 0.14117648, b: 1, a: 1}
     fontSize: 50
     text: CRISOSTOMO
 --- !u!114 &431207046522353722
@@ -8564,7 +8798,25 @@ MonoBehaviour:
       m_RotationOrder: 4
     m_MixOutCurve:
       serializedVersion: 2
-      m_Curve: []
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -8591,7 +8843,25 @@ MonoBehaviour:
     m_BlendOutDuration: -1
     m_MixInCurve:
       serializedVersion: 2
-      m_Curve: []
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -8879,7 +9149,7 @@ MonoBehaviour:
   m_Name: TextSwitcherClip(Clone)
   m_EditorClassIdentifier: 
   template:
-    color: {r: 0, g: 0, b: 0, a: 1}
+    color: {r: 0.39607844, g: 0.18431373, b: 0.015686275, a: 1}
     fontSize: 50
     text: PADRE DAMASO
 --- !u!114 &1213552089771564515
@@ -8895,7 +9165,7 @@ MonoBehaviour:
   m_Name: TextSwitcherClip(Clone)
   m_EditorClassIdentifier: 
   template:
-    color: {r: 0.20784314, g: 0.22745098, b: 0.6039216, a: 1}
+    color: {r: 0, g: 0, b: 0, a: 1}
     fontSize: 40
     text: "Ano ito? Leeg at pakpak?! Ako ba\u2019y pulubi sa hapag ng aking kaibigan?!"
 --- !u!114 &1623606890171245530
@@ -8933,7 +9203,7 @@ MonoBehaviour:
   m_Name: TextSwitcherClip(Clone)
   m_EditorClassIdentifier: 
   template:
-    color: {r: 0.20784314, g: 0.22745098, b: 0.6039216, a: 1}
+    color: {r: 0, g: 0, b: 0, a: 1}
     fontSize: 40
     text: "Sigurado akong biro lang \u2018yon ni Padre Damaso.."
 --- !u!114 &1769663808016541170
@@ -9093,7 +9363,7 @@ MonoBehaviour:
   m_Name: TextSwitcherClip(Clone)
   m_EditorClassIdentifier: 
   template:
-    color: {r: 0, g: 0, b: 0, a: 1}
+    color: {r: 0.92156863, g: 1, b: 0, a: 1}
     fontSize: 50
     text: KAPITAN TIAGO
 --- !u!114 &2575679563741174832
@@ -9470,7 +9740,7 @@ MonoBehaviour:
   m_Name: TextSwitcherClip(Clone)
   m_EditorClassIdentifier: 
   template:
-    color: {r: 0, g: 0, b: 0, a: 1}
+    color: {r: 0, g: 0.14117648, b: 1, a: 1}
     fontSize: 50
     text: CRISOSTOMO
 --- !u!114 &3917812096574615910
@@ -9486,9 +9756,9 @@ MonoBehaviour:
   m_Name: TextSwitcherClip(Clone)
   m_EditorClassIdentifier: 
   template:
-    color: {r: 0.20784314, g: 0.22745098, b: 0.6039216, a: 1}
+    color: {r: 0, g: 0, b: 0, a: 1}
     fontSize: 40
-    text: "Sabihin mo nga, Se\xF1or Ibarra \u2014 Ano ang iyong natutunan sa Europa?"
+    text: "Sabihin mo nga, Se\xF1or Ibarra Ano ang iyong natutunan sa Europa?"
 --- !u!114 &3962005935443119134
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10751,13 +11021,49 @@ MonoBehaviour:
     m_BlendOutDuration: 3.0166666666666657
     m_MixInCurve:
       serializedVersion: 2
-      m_Curve: []
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
     m_MixOutCurve:
       serializedVersion: 2
-      m_Curve: []
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -10784,7 +11090,25 @@ MonoBehaviour:
     m_BlendOutDuration: -1
     m_MixInCurve:
       serializedVersion: 2
-      m_Curve: []
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -10837,7 +11161,7 @@ MonoBehaviour:
   m_Name: TextSwitcherClip(Clone)
   m_EditorClassIdentifier: 
   template:
-    color: {r: 0, g: 0, b: 0, a: 1}
+    color: {r: 0.39607844, g: 0.18431373, b: 0.015686275, a: 1}
     fontSize: 50
     text: PADRE DAMASO
 --- !u!114 &5157344488411393392
@@ -11270,7 +11594,7 @@ MonoBehaviour:
   m_Name: TextSwitcherClip(Clone)
   m_EditorClassIdentifier: 
   template:
-    color: {r: 0, g: 0, b: 0, a: 1}
+    color: {r: 0, g: 0.14117648, b: 1, a: 1}
     fontSize: 50
     text: CRISOSTOMO
 --- !u!114 &6324719895598054374
@@ -11504,7 +11828,25 @@ MonoBehaviour:
     m_BlendOutDuration: -1
     m_MixInCurve:
       serializedVersion: 2
-      m_Curve: []
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -11537,13 +11879,49 @@ MonoBehaviour:
     m_BlendOutDuration: 1.0602902889251737
     m_MixInCurve:
       serializedVersion: 2
-      m_Curve: []
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
     m_MixOutCurve:
       serializedVersion: 2
-      m_Curve: []
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -11576,7 +11954,25 @@ MonoBehaviour:
       m_RotationOrder: 4
     m_MixOutCurve:
       serializedVersion: 2
-      m_Curve: []
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -11603,7 +11999,25 @@ MonoBehaviour:
     m_BlendOutDuration: -1
     m_MixInCurve:
       serializedVersion: 2
-      m_Curve: []
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -11660,7 +12074,25 @@ MonoBehaviour:
       m_RotationOrder: 4
     m_MixOutCurve:
       serializedVersion: 2
-      m_Curve: []
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -11687,13 +12119,49 @@ MonoBehaviour:
     m_BlendOutDuration: 1.6500000000000057
     m_MixInCurve:
       serializedVersion: 2
-      m_Curve: []
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
     m_MixOutCurve:
       serializedVersion: 2
-      m_Curve: []
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -11720,7 +12188,25 @@ MonoBehaviour:
     m_BlendOutDuration: -1
     m_MixInCurve:
       serializedVersion: 2
-      m_Curve: []
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -12193,7 +12679,7 @@ MonoBehaviour:
   m_Name: TextSwitcherClip(Clone)
   m_EditorClassIdentifier: 
   template:
-    color: {r: 0.20784314, g: 0.22745098, b: 0.6039216, a: 1}
+    color: {r: 0, g: 0, b: 0, a: 1}
     fontSize: 40
     text: Lahat ng kaalaman, pero parang bata ka pa rin magsalita. Sayang ang ginastos
       ng iyong ama!
@@ -12320,7 +12806,7 @@ MonoBehaviour:
   m_Name: TextSwitcherClip(Clone)
   m_EditorClassIdentifier: 
   template:
-    color: {r: 0.20784314, g: 0.22745098, b: 0.6039216, a: 1}
+    color: {r: 0, g: 0, b: 0, a: 1}
     fontSize: 40
     text: Ngunit darating na si Maria Clara!
 --- !u!114 &8810353635199434520

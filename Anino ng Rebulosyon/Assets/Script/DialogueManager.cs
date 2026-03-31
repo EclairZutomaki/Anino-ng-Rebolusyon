@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
 using StarterAssets;
 
@@ -22,12 +21,18 @@ public class DialogueManager : MonoBehaviour
     [HideInInspector]
     public bool isDialogueFinished = false;
 
-    void Update()
+    private void Start()
+    {
+        if (dialogueUI != null)
+            dialogueUI.SetActive(false);
+    }
+
+    private void Update()
     {
         if (!isDialogueActive) return;
 
 #if ENABLE_INPUT_SYSTEM
-        if (Mouse.current.leftButton.wasPressedThisFrame)
+        if (Mouse.current != null && Mouse.current.leftButton.wasPressedThisFrame)
 #else
         if (Input.GetMouseButtonDown(0))
 #endif
@@ -38,9 +43,21 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(DialogueLine[] dialogueLines)
     {
-        if (dialogueLines == null || dialogueLines.Length == 0) return;
+        if (dialogueLines == null || dialogueLines.Length == 0)
+            return;
 
-        // lock yung movement
+        if (dialogueUI == null)
+        {
+            Debug.LogError("DialogueManager: dialogueUI is not assigned.");
+            return;
+        }
+
+        if (dialogueText == null)
+        {
+            Debug.LogError("DialogueManager: dialogueText is not assigned.");
+            return;
+        }
+
         ThirdPersonController.dialogue = true;
 
         isDialogueActive = true;
@@ -63,16 +80,19 @@ public class DialogueManager : MonoBehaviour
 
         DialogueLine line = lines[currentLine];
 
-        // text
         if (nameText != null)
+        {
             nameText.text = line.speakerName;
+            nameText.color = line.speakerNameColor;
+            nameText.gameObject.SetActive(!string.IsNullOrEmpty(line.speakerName));
+        }
 
         dialogueText.text = line.lineText;
 
-        // 🔊 audio — always hard stop before new play
         if (voiceOverSource != null)
         {
             voiceOverSource.Stop();
+            voiceOverSource.clip = null;
 
             if (line.voiceClip != null)
             {
@@ -84,7 +104,6 @@ public class DialogueManager : MonoBehaviour
 
     private void NextLine()
     {
-        // cut current audio when skipping
         if (voiceOverSource != null && voiceOverSource.isPlaying)
             voiceOverSource.Stop();
 
@@ -102,15 +121,18 @@ public class DialogueManager : MonoBehaviour
 
     private void EndDialogue()
     {
-        // ensure audio is stopped on exit
-        if (voiceOverSource != null && voiceOverSource.isPlaying)
+        if (voiceOverSource != null)
+        {
             voiceOverSource.Stop();
+            voiceOverSource.clip = null;
+        }
 
-        dialogueUI.SetActive(false);
+        if (dialogueUI != null)
+            dialogueUI.SetActive(false);
+
         isDialogueActive = false;
         isDialogueFinished = true;
 
-        // unlock movement
         ThirdPersonController.dialogue = false;
     }
 }

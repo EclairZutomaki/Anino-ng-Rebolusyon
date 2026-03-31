@@ -3,7 +3,7 @@
 public class TenyenteDialogueTrigger : MonoBehaviour
 {
     [Header("Subtitle Settings")]
-    public bool showSubtitle = true; // Toggle if subtitle UI should appear
+    public bool showSubtitle = true;
 
     [TextArea] public string subtitleText;
     public AudioClip voiceClip;
@@ -13,6 +13,7 @@ public class TenyenteDialogueTrigger : MonoBehaviour
 
     [Header("Speaker")]
     public string speakerName;
+    public Color speakerNameColor = Color.white; // 👈 NEW (editable in Inspector)
 
     [Header("Special Events")]
     [Tooltip("Check this if this is the LAST dialogue and should trigger the run tutorial.")]
@@ -24,23 +25,21 @@ public class TenyenteDialogueTrigger : MonoBehaviour
     {
         if (hasPlayed && playOnce) return;
 
-        // Player/NPC with tag "Tenyente" enters the trigger
         if (other.CompareTag("Tenyente"))
         {
-            // Show subtitle only if enabled
             if (showSubtitle && SubtitleManager.Instance != null)
             {
                 SubtitleManager.Instance.ShowSubtitle(
                     speakerName,
                     subtitleText,
                     voiceClip,
-                    overrideDuration
+                    overrideDuration,
+                    speakerNameColor // 👈 pass color
                 );
             }
 
             hasPlayed = true;
 
-            // Optional: trigger run tutorial
             if (triggerRunTutorial)
             {
                 TutorialManager tutorial = Object.FindFirstObjectByType<TutorialManager>();

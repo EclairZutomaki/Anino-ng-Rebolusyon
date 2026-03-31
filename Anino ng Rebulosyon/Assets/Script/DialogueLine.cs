@@ -3,8 +3,14 @@ using UnityEngine;
 [System.Serializable]
 public class DialogueLine
 {
-    public string speakerName;      // Who’s talking
+    [Header("Speaker")]
+    public string speakerName;
+    public Color speakerNameColor = Color.white;
+
+    [Header("Dialogue")]
     [TextArea(2, 4)]
-    public string lineText;         // Their line
-    public AudioClip voiceClip;     // Optional voice
+    public string lineText;
+
+    [Header("Voice")]
+    public AudioClip voiceClip;
 }

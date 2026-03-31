@@ -21,11 +21,12 @@ public class NPC : MonoBehaviour
 
     [Header("Scene Change (Optional)")]
     [Tooltip("Leave empty if you do NOT want to switch scenes.")]
-    public string sceneToLoad = "";   // <-- NEW FEATURE
+    public string sceneToLoad = "";
 
     private bool playerInRange = false;
     private DialogueManager dialogueManager;
     private bool dialogueTriggered = false;
+    private bool isStartingDialogue = false;
 
     private void Start()
     {
@@ -39,53 +40,50 @@ public class NPC : MonoBehaviour
 
     private void Update()
     {
-        if (playerInRange && dialogueManager != null)
-        {
+        if (!playerInRange || dialogueManager == null || isStartingDialogue)
+            return;
+
 #if ENABLE_INPUT_SYSTEM
-            if (Keyboard.current.eKey.wasPressedThisFrame)
+        if (Keyboard.current != null && Keyboard.current.eKey.wasPressedThisFrame)
 #else
-            if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E))
 #endif
+        {
+            if (!dialogueTriggered || repeatable)
             {
-                // Only trigger once unless repeatable is enabled
-                if (!dialogueTriggered || repeatable)
-                {
-                    dialogueTriggered = true;
-                    StartCoroutine(StartDialogueAndTrigger());
-                }
+                StartCoroutine(StartDialogueAndTrigger());
             }
         }
     }
 
     private IEnumerator StartDialogueAndTrigger()
     {
+        isStartingDialogue = true;
+        dialogueTriggered = true;
+
         dialogueManager.StartDialogue(dialogueLines);
 
-        // Wait until player finishes ALL dialogue lines
         yield return new WaitUntil(() => dialogueManager.isDialogueFinished);
 
-        // Optional delay
         if (activationDelay > 0)
             yield return new WaitForSeconds(activationDelay);
 
-        // Activate GameObjects
         foreach (var obj in objectsToActivate)
-            if (obj) obj.SetActive(true);
+            if (obj != null) obj.SetActive(true);
 
-        // Hide GameObjects
         foreach (var obj in objectsToHide)
-            if (obj) obj.SetActive(false);
+            if (obj != null) obj.SetActive(false);
 
-        // 🔵 NEW: Load another scene (ONLY if assigned)
         if (!string.IsNullOrEmpty(sceneToLoad))
         {
             SceneManager.LoadScene(sceneToLoad);
             yield break;
         }
 
-        // Allow replay if repeatable
         if (repeatable)
             dialogueTriggered = false;
+
+        isStartingDialogue = false;
     }
 
     private void OnTriggerEnter(Collider other)

@@ -1,9 +1,10 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class DialogueTrigger : MonoBehaviour
 {
     [Header("Speaker")]
-    public string speakerName;    // NEW NAME FIELD
+    public string speakerName;
+    public Color speakerNameColor = Color.white;
 
     [Header("Subtitle")]
     [TextArea] public string subtitleText;
@@ -13,30 +14,45 @@ public class DialogueTrigger : MonoBehaviour
     public bool playOnce = true;
 
     [Header("Special Events")]
-    [Tooltip("Check this if this is the LAST dialogue and should trigger the run tutorial.")]
     public bool triggerRunTutorial = false;
 
     private bool hasPlayed = false;
+    private Collider triggerCollider;
+
+    private void Awake()
+    {
+        triggerCollider = GetComponent<Collider>();
+    }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (hasPlayed && playOnce) return;
+        if (!other.CompareTag("Player"))
+            return;
 
-        if (other.CompareTag("Player"))
+        if (hasPlayed && playOnce)
+            return;
+
+        if (SubtitleManager.Instance != null)
         {
-            // USES THE NEW SHOWSUBTITLE WITH NAME
-            SubtitleManager.Instance.ShowSubtitle(speakerName, subtitleText, voiceClip, overrideDuration);
+            SubtitleManager.Instance.ShowSubtitle(
+                speakerName,
+                subtitleText,
+                voiceClip,
+                overrideDuration,
+                speakerNameColor
+            );
+        }
 
-            hasPlayed = true;
+        hasPlayed = true;
 
-            if (triggerRunTutorial)
-            {
-                TutorialManager tutorial = Object.FindFirstObjectByType<TutorialManager>();
-                if (tutorial != null)
-                {
-                    tutorial.TriggerRunTutorial();
-                }
-            }
+        if (playOnce && triggerCollider != null)
+            triggerCollider.enabled = false;
+
+        if (triggerRunTutorial)
+        {
+            TutorialManager tutorial = Object.FindFirstObjectByType<TutorialManager>();
+            if (tutorial != null)
+                tutorial.TriggerRunTutorial();
         }
     }
 }

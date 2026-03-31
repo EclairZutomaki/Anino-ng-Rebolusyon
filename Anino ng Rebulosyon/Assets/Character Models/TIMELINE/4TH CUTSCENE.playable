@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: TextSwitcherClip(Clone)
   m_EditorClassIdentifier: 
   template:
-    color: {r: 0, g: 0, b: 0, a: 1}
+    color: {r: 0.6862745, g: 0, b: 0.4745098, a: 1}
     fontSize: 50
     text: MARIA CLARA
 --- !u!114 &-9084161950737517442
@@ -29,7 +29,7 @@ MonoBehaviour:
   m_Name: TextSwitcherClip(Clone)
   m_EditorClassIdentifier: 
   template:
-    color: {r: 0.20784314, g: 0.22745098, b: 0.6039216, a: 1}
+    color: {r: 0, g: 0, b: 0, a: 1}
     fontSize: 40
     text: " Maria Clara\u2026 may dala ako sayo."
 --- !u!114 &-8935016284945002944
@@ -1631,7 +1631,7 @@ MonoBehaviour:
   m_Name: TextSwitcherClip(Clone)
   m_EditorClassIdentifier: 
   template:
-    color: {r: 0, g: 0, b: 0, a: 1}
+    color: {r: 0, g: 0.14117648, b: 1, a: 1}
     fontSize: 50
     text: CRISOSTOMO
 --- !u!114 &-6068972354095806817
@@ -1669,7 +1669,7 @@ MonoBehaviour:
   m_Name: TextSwitcherClip(Clone)
   m_EditorClassIdentifier: 
   template:
-    color: {r: 0, g: 0, b: 0, a: 1}
+    color: {r: 0, g: 0.14117648, b: 1, a: 1}
     fontSize: 50
     text: CRISOSTOMO
 --- !u!114 &-5537287342314549683
@@ -1724,7 +1724,7 @@ MonoBehaviour:
   m_Name: TextSwitcherClip(Clone)
   m_EditorClassIdentifier: 
   template:
-    color: {r: 0, g: 0, b: 0, a: 1}
+    color: {r: 0, g: 0.14117648, b: 1, a: 1}
     fontSize: 50
     text: CRISOSTOMO
 --- !u!114 &-5023196747426343630
@@ -1824,7 +1824,7 @@ MonoBehaviour:
   m_Name: TextSwitcherClip(Clone)
   m_EditorClassIdentifier: 
   template:
-    color: {r: 0.20784314, g: 0.22745098, b: 0.6039216, a: 1}
+    color: {r: 0, g: 0, b: 0, a: 1}
     fontSize: 40
     text: Ngayon din?
 --- !u!114 &-3336525386866410627
@@ -1840,7 +1840,7 @@ MonoBehaviour:
   m_Name: TextSwitcherClip
   m_EditorClassIdentifier: 
   template:
-    color: {r: 0.20784314, g: 0.22745098, b: 0.6039216, a: 1}
+    color: {r: 0, g: 0, b: 0, a: 1}
     fontSize: 40
     text: Oo. Pero magkikita pa rin tayo.
 --- !u!114 &-3245277409585915430
@@ -2042,7 +2042,7 @@ MonoBehaviour:
   m_Name: TextSwitcherClip(Clone)
   m_EditorClassIdentifier: 
   template:
-    color: {r: 0.20784314, g: 0.22745098, b: 0.6039216, a: 1}
+    color: {r: 0, g: 0, b: 0, a: 1}
     fontSize: 40
     text: Maria Clara
 --- !u!114 &-2988360582600085390
@@ -2092,7 +2092,7 @@ MonoBehaviour:
   m_Name: TextSwitcherClip(Clone)
   m_EditorClassIdentifier: 
   template:
-    color: {r: 0, g: 0, b: 0, a: 1}
+    color: {r: 0.6862745, g: 0, b: 0.4745098, a: 1}
     fontSize: 50
     text: MARIA CLARA
 --- !u!114 &-2348022335907956082
@@ -3060,7 +3060,7 @@ MonoBehaviour:
   m_Name: TextSwitcherClip(Clone)
   m_EditorClassIdentifier: 
   template:
-    color: {r: 0.20784314, g: 0.22745098, b: 0.6039216, a: 1}
+    color: {r: 0, g: 0, b: 0, a: 1}
     fontSize: 40
     text: "At ito naman\u2026 sulat mo bago ka umalis papuntang Europa."
 --- !u!114 &-1107861503975158669
@@ -3169,7 +3169,7 @@ MonoBehaviour:
   m_Name: TextSwitcherClip(Clone)
   m_EditorClassIdentifier: 
   template:
-    color: {r: 0, g: 0, b: 0, a: 1}
+    color: {r: 0, g: 0.14117648, b: 1, a: 1}
     fontSize: 50
     text: CRISOSTOMO
 --- !u!114 &-994513047380844579
@@ -3185,7 +3185,7 @@ MonoBehaviour:
   m_Name: TextSwitcherClip(Clone)
   m_EditorClassIdentifier: 
   template:
-    color: {r: 0.20784314, g: 0.22745098, b: 0.6039216, a: 1}
+    color: {r: 0, g: 0, b: 0, a: 1}
     fontSize: 40
     text: "Maria\u2026"
 --- !u!114 &-694105959545039532
@@ -3321,7 +3321,25 @@ MonoBehaviour:
       m_RotationOrder: 4
     m_MixOutCurve:
       serializedVersion: 2
-      m_Curve: []
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -3348,13 +3366,49 @@ MonoBehaviour:
     m_BlendOutDuration: 0.8166666666666664
     m_MixInCurve:
       serializedVersion: 2
-      m_Curve: []
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
     m_MixOutCurve:
       serializedVersion: 2
-      m_Curve: []
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -3381,13 +3435,49 @@ MonoBehaviour:
     m_BlendOutDuration: 0.8166666666666664
     m_MixInCurve:
       serializedVersion: 2
-      m_Curve: []
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
     m_MixOutCurve:
       serializedVersion: 2
-      m_Curve: []
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -3414,13 +3504,49 @@ MonoBehaviour:
     m_BlendOutDuration: 0.9078767032362336
     m_MixInCurve:
       serializedVersion: 2
-      m_Curve: []
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
     m_MixOutCurve:
       serializedVersion: 2
-      m_Curve: []
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -3447,13 +3573,49 @@ MonoBehaviour:
     m_BlendOutDuration: 0.40833333333335275
     m_MixInCurve:
       serializedVersion: 2
-      m_Curve: []
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
     m_MixOutCurve:
       serializedVersion: 2
-      m_Curve: []
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -3486,7 +3648,25 @@ MonoBehaviour:
       m_RotationOrder: 4
     m_MixOutCurve:
       serializedVersion: 2
-      m_Curve: []
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -3513,7 +3693,25 @@ MonoBehaviour:
     m_BlendOutDuration: -1
     m_MixInCurve:
       serializedVersion: 2
-      m_Curve: []
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -3546,7 +3744,25 @@ MonoBehaviour:
     m_BlendOutDuration: -1
     m_MixInCurve:
       serializedVersion: 2
-      m_Curve: []
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -4542,7 +4758,7 @@ MonoBehaviour:
   m_Name: TextSwitcherClip(Clone)(Clone)
   m_EditorClassIdentifier: 
   template:
-    color: {r: 0.20784314, g: 0.22745098, b: 0.6039216, a: 1}
+    color: {r: 0, g: 0, b: 0, a: 1}
     fontSize: 40
     text: "Ito\u2026 ito 'yung dahon ng sambong!"
 --- !u!114 &1933133598156414454
@@ -5568,7 +5784,7 @@ MonoBehaviour:
   m_Name: TextSwitcherClip(Clone)
   m_EditorClassIdentifier: 
   template:
-    color: {r: 0, g: 0, b: 0, a: 1}
+    color: {r: 0.6862745, g: 0, b: 0.4745098, a: 1}
     fontSize: 50
     text: MARIA CLARA
 --- !u!114 &2471152486288455780
@@ -5584,7 +5800,7 @@ MonoBehaviour:
   m_Name: TextSwitcherClip(Clone)
   m_EditorClassIdentifier: 
   template:
-    color: {r: 0, g: 0, b: 0, a: 1}
+    color: {r: 0, g: 0.14117648, b: 1, a: 1}
     fontSize: 50
     text: CRISOSTOMO
 --- !u!114 &2535643208438107268
@@ -6849,7 +7065,7 @@ MonoBehaviour:
   m_Name: TextSwitcherClip(Clone)(Clone)(Clone)
   m_EditorClassIdentifier: 
   template:
-    color: {r: 0.20784314, g: 0.22745098, b: 0.6039216, a: 1}
+    color: {r: 0, g: 0, b: 0, a: 1}
     fontSize: 40
     text: Mag-iingat ka mahal ko.
 --- !u!114 &3380808178907125760
@@ -6877,7 +7093,7 @@ MonoBehaviour:
   m_Name: TextSwitcherClip(Clone)(Clone)(Clone)
   m_EditorClassIdentifier: 
   template:
-    color: {r: 0, g: 0, b: 0, a: 1}
+    color: {r: 0.6862745, g: 0, b: 0.4745098, a: 1}
     fontSize: 50
     text: MARIA CLARA
 --- !u!114 &3814827192327911830
@@ -7431,7 +7647,7 @@ MonoBehaviour:
   m_Name: TextSwitcherClip(Clone)
   m_EditorClassIdentifier: 
   template:
-    color: {r: 0.20784314, g: 0.22745098, b: 0.6039216, a: 1}
+    color: {r: 0, g: 0, b: 0, a: 1}
     fontSize: 40
     text: Pasensya ka na, kailangan ko munang umalis.  May kailangan akong tapusin.
 --- !u!114 &6557930840026933279
@@ -7610,7 +7826,7 @@ MonoBehaviour:
   m_Name: TextSwitcherClip(Clone)(Clone)
   m_EditorClassIdentifier: 
   template:
-    color: {r: 0, g: 0, b: 0, a: 1}
+    color: {r: 0.6862745, g: 0, b: 0.4745098, a: 1}
     fontSize: 50
     text: MARIA CLARA
 --- !u!114 &6873806078301197586
@@ -7750,7 +7966,7 @@ MonoBehaviour:
   m_Name: TextSwitcherClip(Clone)(Clone)
   m_EditorClassIdentifier: 
   template:
-    color: {r: 0.20784314, g: 0.22745098, b: 0.6039216, a: 1}
+    color: {r: 0, g: 0, b: 0, a: 1}
     fontSize: 40
     text: Crisostomo!
 --- !u!114 &7445701129677188758
@@ -7766,7 +7982,7 @@ MonoBehaviour:
   m_Name: TextSwitcherClip(Clone)
   m_EditorClassIdentifier: 
   template:
-    color: {r: 0.20784314, g: 0.22745098, b: 0.6039216, a: 1}
+    color: {r: 0, g: 0, b: 0, a: 1}
     fontSize: 40
     text: Naalala mo pa pala.
 --- !u!114 &7467802949406846466
@@ -7861,7 +8077,25 @@ MonoBehaviour:
       m_RotationOrder: 4
     m_MixOutCurve:
       serializedVersion: 2
-      m_Curve: []
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -7888,13 +8122,49 @@ MonoBehaviour:
     m_BlendOutDuration: 0.6666666666666661
     m_MixInCurve:
       serializedVersion: 2
-      m_Curve: []
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
     m_MixOutCurve:
       serializedVersion: 2
-      m_Curve: []
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -7921,13 +8191,49 @@ MonoBehaviour:
     m_BlendOutDuration: 1.6637964653472128
     m_MixInCurve:
       serializedVersion: 2
-      m_Curve: []
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
     m_MixOutCurve:
       serializedVersion: 2
-      m_Curve: []
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -7954,13 +8260,49 @@ MonoBehaviour:
     m_BlendOutDuration: 0.7000000000000028
     m_MixInCurve:
       serializedVersion: 2
-      m_Curve: []
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
     m_MixOutCurve:
       serializedVersion: 2
-      m_Curve: []
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -7987,7 +8329,25 @@ MonoBehaviour:
     m_BlendOutDuration: -1
     m_MixInCurve:
       serializedVersion: 2
-      m_Curve: []
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -8044,7 +8404,25 @@ MonoBehaviour:
       m_RotationOrder: 4
     m_MixOutCurve:
       serializedVersion: 2
-      m_Curve: []
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -8071,13 +8449,49 @@ MonoBehaviour:
     m_BlendOutDuration: 0.1666666666666643
     m_MixInCurve:
       serializedVersion: 2
-      m_Curve: []
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
     m_MixOutCurve:
       serializedVersion: 2
-      m_Curve: []
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -8104,13 +8518,49 @@ MonoBehaviour:
     m_BlendOutDuration: 0.18333333333333357
     m_MixInCurve:
       serializedVersion: 2
-      m_Curve: []
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
     m_MixOutCurve:
       serializedVersion: 2
-      m_Curve: []
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -8137,13 +8587,49 @@ MonoBehaviour:
     m_BlendOutDuration: 0.19999999999999574
     m_MixInCurve:
       serializedVersion: 2
-      m_Curve: []
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
     m_MixOutCurve:
       serializedVersion: 2
-      m_Curve: []
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -8170,13 +8656,49 @@ MonoBehaviour:
     m_BlendOutDuration: 0.1999999999999993
     m_MixInCurve:
       serializedVersion: 2
-      m_Curve: []
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
     m_MixOutCurve:
       serializedVersion: 2
-      m_Curve: []
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -8203,13 +8725,49 @@ MonoBehaviour:
     m_BlendOutDuration: 0.48333333333333073
     m_MixInCurve:
       serializedVersion: 2
-      m_Curve: []
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
     m_MixOutCurve:
       serializedVersion: 2
-      m_Curve: []
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -8236,13 +8794,49 @@ MonoBehaviour:
     m_BlendOutDuration: 0.7333333333333343
     m_MixInCurve:
       serializedVersion: 2
-      m_Curve: []
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
     m_MixOutCurve:
       serializedVersion: 2
-      m_Curve: []
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -8269,13 +8863,49 @@ MonoBehaviour:
     m_BlendOutDuration: 0.41712329676374793
     m_MixInCurve:
       serializedVersion: 2
-      m_Curve: []
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
     m_MixOutCurve:
       serializedVersion: 2
-      m_Curve: []
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -8302,7 +8932,25 @@ MonoBehaviour:
     m_BlendOutDuration: -1
     m_MixInCurve:
       serializedVersion: 2
-      m_Curve: []
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -8359,7 +9007,25 @@ MonoBehaviour:
       m_RotationOrder: 4
     m_MixOutCurve:
       serializedVersion: 2
-      m_Curve: []
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -8386,7 +9052,25 @@ MonoBehaviour:
     m_BlendOutDuration: -1
     m_MixInCurve:
       serializedVersion: 2
-      m_Curve: []
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -8457,7 +9141,7 @@ MonoBehaviour:
   m_Name: TextSwitcherClip(Clone)(Clone)
   m_EditorClassIdentifier: 
   template:
-    color: {r: 0.20784314, g: 0.22745098, b: 0.6039216, a: 1}
+    color: {r: 0, g: 0, b: 0, a: 1}
     fontSize: 40
     text: Paano ko makakalimutan?
 --- !u!74 &7671459785122116544
@@ -8743,7 +9427,7 @@ MonoBehaviour:
   m_Name: TextSwitcherClip(Clone)
   m_EditorClassIdentifier: 
   template:
-    color: {r: 0, g: 0, b: 0, a: 1}
+    color: {r: 0.6862745, g: 0, b: 0.4745098, a: 1}
     fontSize: 50
     text: MARIA CLARA
 --- !u!114 &8542718149363214755
@@ -8943,7 +9627,7 @@ MonoBehaviour:
   m_Name: TextSwitcherClip(Clone)
   m_EditorClassIdentifier: 
   template:
-    color: {r: 0.20784314, g: 0.22745098, b: 0.6039216, a: 1}
+    color: {r: 0, g: 0, b: 0, a: 1}
     fontSize: 40
     text: ' Inilagay ko iyon para hindi naman mainitan ang iyong ulo habang suot
       ang iyong sombrero.'
@@ -8960,7 +9644,7 @@ MonoBehaviour:
   m_Name: TextSwitcherClip(Clone)
   m_EditorClassIdentifier: 
   template:
-    color: {r: 0.20784314, g: 0.22745098, b: 0.6039216, a: 1}
+    color: {r: 0, g: 0, b: 0, a: 1}
     fontSize: 40
     text: ' Ikaw ang naglagay niyan sa sombrero ko noon.'
 --- !u!114 &8839781230523783085
@@ -9865,6 +10549,6 @@ MonoBehaviour:
   m_Name: TextSwitcherClip
   m_EditorClassIdentifier: 
   template:
-    color: {r: 0, g: 0, b: 0, a: 1}
+    color: {r: 0, g: 0.14117648, b: 1, a: 1}
     fontSize: 50
     text: CRISOSTOMO
