@@ -6,6 +6,7 @@ using System.Collections;
 public class TeleportFade : MonoBehaviour
 {
     [Header("References")]
+    public Transform player; // 👈 DRAG YOUR PLAYER HERE (IMPORTANT)
     public Transform teleportDestination;
     public Image fadeImage;
     public float fadeDuration = 1f;
@@ -17,18 +18,12 @@ public class TeleportFade : MonoBehaviour
     public bool playCutsceneOnce = false;
     private bool hasPlayedCutscene = false;
 
-    private GameObject playerObj;
-    private Transform player;
     private bool isTouching = false;
     private bool isTransitioning = false;
     private bool hasJustTeleported = false;
 
     void Start()
     {
-        playerObj = GameObject.FindGameObjectWithTag("Player");
-        if (playerObj != null)
-            player = playerObj.transform;
-
         // Start transparent
         if (fadeImage != null)
         {
@@ -51,14 +46,17 @@ public class TeleportFade : MonoBehaviour
         isTransitioning = true;
         hasJustTeleported = true;
 
-        // 1️⃣ Fade to Black
+        // 🔒 Freeze player safely (NO SetActive)
+        StarterAssets.ThirdPersonController.dialogue = true;
+
+        // 1️⃣ Fade to black
         yield return StartCoroutine(Fade(0, 1));
         yield return new WaitForSeconds(waitBeforeTeleport);
 
-        // 2️⃣ Teleport while black
+        // 2️⃣ Teleport
         if (player != null && teleportDestination != null)
         {
-            CharacterController cc = player.GetComponent<CharacterController>();
+            CharacterController cc = player.GetComponentInChildren<CharacterController>();
             if (cc) cc.enabled = false;
 
             player.position = teleportDestination.position;
@@ -67,47 +65,40 @@ public class TeleportFade : MonoBehaviour
             if (cc) cc.enabled = true;
         }
 
-        // 3️⃣ Handle Cutscene or Normal
+        // 3️⃣ Cutscene or normal
         if (playCutscene && timelineDirector != null)
         {
             if (!playCutsceneOnce || (playCutsceneOnce && !hasPlayedCutscene))
             {
                 hasPlayedCutscene = true;
 
-                // Disable player right before fade-in
-                if (playerObj) playerObj.SetActive(false);
-
-                // Keep screen black while teleport settles
                 yield return new WaitForSeconds(0.3f);
 
-                // ✨ Start cutscene THEN fade in
                 timelineDirector.Play();
+
                 yield return new WaitForSeconds(0.3f);
                 yield return StartCoroutine(Fade(1, 0));
 
-                // Wait for cutscene to finish
                 yield return new WaitUntil(() => timelineDirector.state != PlayState.Playing);
 
-                // 4️⃣ Fade out at end of cutscene -> re-enable player
                 yield return StartCoroutine(Fade(0, 1));
-                if (playerObj) playerObj.SetActive(true);
                 yield return new WaitForSeconds(0.2f);
                 yield return StartCoroutine(Fade(1, 0));
             }
             else
             {
-                // Cutscene already played, just fade out
                 yield return StartCoroutine(Fade(1, 0));
             }
         }
         else
         {
-            // 4️⃣ No cutscene — fade back out normally
             yield return new WaitForSeconds(0.3f);
             yield return StartCoroutine(Fade(1, 0));
         }
 
-        // Reset transition flags
+        // 🔓 Unfreeze player
+        StarterAssets.ThirdPersonController.dialogue = false;
+
         isTransitioning = false;
         StartCoroutine(ResetTeleportPermission());
     }
@@ -120,9 +111,6 @@ public class TeleportFade : MonoBehaviour
 
     IEnumerator Fade(float startAlpha, float endAlpha)
     {
-        startAlpha = Mathf.Clamp01(startAlpha);
-        endAlpha = Mathf.Clamp01(endAlpha);
-
         float elapsed = 0f;
         Color c = fadeImage.color;
 
