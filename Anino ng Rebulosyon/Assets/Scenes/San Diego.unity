@@ -511,6 +511,7 @@ MonoBehaviour:
   overrideDuration: 0
   playOnce: 1
   speakerName: 
+  speakerNameColor: {r: 1, g: 1, b: 1, a: 1}
   triggerRunTutorial: 0
 --- !u!1 &1688166
 GameObject:
@@ -32502,18 +32503,20 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: cdda4b0fbde292740b73a95bc9c5af98, type: 3}
-    m_FontSize: 23
+    m_FontSize: 15
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 131
+    m_MinSize: 1
+    m_MaxSize: 300
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: YUGTO 2 - SAN DIEGO
+  m_Text: 'Yugto II
+
+    Ang Sikreto ng Pagdurusa'
 --- !u!222 &120775624
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -32533,13 +32536,14 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1965604619}
   m_Father: {fileID: 794050220}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000015259, y: 108.2}
-  m_SizeDelta: {x: 353.4975, y: 52.4224}
+  m_AnchoredPosition: {x: -0.000015259, y: 107}
+  m_SizeDelta: {x: 264.1277, y: 36.8631}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &122164872
 PrefabInstance:
@@ -87741,6 +87745,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speakerName: CRISOSTOMO
+  speakerNameColor: {r: 1, g: 1, b: 1, a: 1}
   subtitleText: Ano ito si Maria Clara nasa San Diego na?
   voiceClip: {fileID: 0}
   overrideDuration: 0
@@ -88919,6 +88924,7 @@ MonoBehaviour:
   overrideDuration: 5
   playOnce: 1
   speakerName: 
+  speakerNameColor: {r: 1, g: 1, b: 1, a: 1}
   triggerRunTutorial: 0
 --- !u!1 &388646649
 GameObject:
@@ -110126,15 +110132,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueLines:
   - speakerName: 
+    speakerNameColor: {r: 1, g: 1, b: 1, a: 1}
     lineText: 
     voiceClip: {fileID: 0}
   - speakerName: 
+    speakerNameColor: {r: 1, g: 1, b: 1, a: 1}
     lineText: 
     voiceClip: {fileID: 0}
   - speakerName: 
+    speakerNameColor: {r: 1, g: 1, b: 1, a: 1}
     lineText: 
     voiceClip: {fileID: 0}
   - speakerName: 
+    speakerNameColor: {r: 1, g: 1, b: 1, a: 1}
     lineText: 
     voiceClip: {fileID: 0}
   repeatable: 0
@@ -226485,6 +226495,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speakerName: CRISOSTOMO
+  speakerNameColor: {r: 1, g: 1, b: 1, a: 1}
   subtitleText: "Magpapahinga muna ako sa tabing-ilog\u2026 kailangan kong huminga."
   voiceClip: {fileID: 8300000, guid: a26151ef017061d4a90326f0d25d5b89, type: 3}
   overrideDuration: 0
@@ -278927,9 +278938,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueLines:
   - speakerName: MARIA CLARA
+    speakerNameColor: {r: 1, g: 1, b: 1, a: 1}
     lineText: "Natakot ako\u2026 baka ikaw ay nasaktan."
     voiceClip: {fileID: 0}
   - speakerName: CRISOSTOMO
+    speakerNameColor: {r: 1, g: 1, b: 1, a: 1}
     lineText: Huwag ka mag alala Maria Clara, pagkat nandiyan naman si Elias para
       tulungan ako
     voiceClip: {fileID: 0}
@@ -297755,9 +297768,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueLines:
   - speakerName: Crisostomo
+    speakerNameColor: {r: 1, g: 1, b: 1, a: 1}
     lineText: Hi
     voiceClip: {fileID: 8300000, guid: 1a91fcd19acf1e54bba0945d9f390849, type: 3}
   - speakerName: Sisa
+    speakerNameColor: {r: 1, g: 1, b: 1, a: 1}
     lineText: Hello
     voiceClip: {fileID: 8300000, guid: 14e8a8d2158bec840b56c54f5266e692, type: 3}
   repeatable: 0
@@ -333755,10 +333770,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueLines:
   - speakerName: NPC 3
+    speakerNameColor: {r: 1, g: 1, b: 1, a: 1}
     lineText: Ginoo, ako po'y labis na nag aalala, maari po kung pwede muna tayo
       pumunta sa Doctor at mag patingin.
     voiceClip: {fileID: 0}
   - speakerName: CRISOSTOMO
+    speakerNameColor: {r: 1, g: 1, b: 1, a: 1}
     lineText: Wag ka mag alala kaibigan, sapagkat ako'y ayos lang.
     voiceClip: {fileID: 0}
   repeatable: 0
@@ -340761,6 +340778,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueLines:
   - speakerName: NPC 1
+    speakerNameColor: {r: 1, g: 1, b: 1, a: 1}
     lineText: Ayos! Pagkatapos ng laban, dapat magdiwang.
     voiceClip: {fileID: 0}
   repeatable: 0
@@ -348890,15 +348908,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueLines:
   - speakerName: CRISOSTOMO IBARRA
+    speakerNameColor: {r: 1, g: 1, b: 1, a: 1}
     lineText: Kaibigan, dumalo ka aming salu-salo.
     voiceClip: {fileID: 0}
   - speakerName: NPC
+    speakerNameColor: {r: 1, g: 1, b: 1, a: 1}
     lineText: "Ano\u2019ng meron?"
     voiceClip: {fileID: 0}
   - speakerName: CRISOSTOMO IBARRA
+    speakerNameColor: {r: 1, g: 1, b: 1, a: 1}
     lineText: Salu-salo sa lawang lumot, si Maria Clara ay naroon.
     voiceClip: {fileID: 0}
   - speakerName: NPC
+    speakerNameColor: {r: 1, g: 1, b: 1, a: 1}
     lineText: Ayos, pupunta ako.
     voiceClip: {fileID: 0}
   repeatable: 1
@@ -352388,35 +352410,45 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueLines:
   - speakerName: CRISOSTOMO
+    speakerNameColor: {r: 1, g: 1, b: 1, a: 1}
     lineText: "Maria Clara\u2026 ang tagal nating \u2019di nagkita."
     voiceClip: {fileID: 8300000, guid: f60200fc72ead5041aea73f18532ca83, type: 3}
   - speakerName: MARIA CLARA
+    speakerNameColor: {r: 1, g: 1, b: 1, a: 1}
     lineText: Ngunit sa bawat araw, hindi kita nakalimutan.
     voiceClip: {fileID: 8300000, guid: 5504b4ebdca0fce4ba19d0b3fc69b6a2, type: 3}
   - speakerName: MARIA CLARA
+    speakerNameColor: {r: 1, g: 1, b: 1, a: 1}
     lineText: Ibarra... May sasabihin ako. Si Padre Salbi...
     voiceClip: {fileID: 8300000, guid: e9e674d7fbde8a849a28bbf3f9bc4b93, type: 3}
   - speakerName: MARIA CLARA
+    speakerNameColor: {r: 1, g: 1, b: 1, a: 1}
     lineText: Hindi ko siya gusto. Palagi siyang nakatingin sa akin...
     voiceClip: {fileID: 8300000, guid: 31b86e10286fc774baac64e34ac32a36, type: 3}
   - speakerName: MARIA CLARA
+    speakerNameColor: {r: 1, g: 1, b: 1, a: 1}
     lineText: "\rParang may masamang balak. Para siyang\u2014"
     voiceClip: {fileID: 8300000, guid: b6fb1906994050247b144de484ed2370, type: 3}
   - speakerName: MARIA CLARA
+    speakerNameColor: {r: 1, g: 1, b: 1, a: 1}
     lineText: (Kilabot) Mapanghimasok.
     voiceClip: {fileID: 8300000, guid: 2e75e80c78abc574fa2cdb64f2a6061a, type: 3}
   - speakerName: CRISOSTOMO
+    speakerNameColor: {r: 1, g: 1, b: 1, a: 1}
     lineText: Kung may ginagawa siyang masama, sasabihin mo agad, ha?
     voiceClip: {fileID: 8300000, guid: 30a9ff6d05949904c8a4ec2868ec5161, type: 3}
   - speakerName: CRISOSTOMO
+    speakerNameColor: {r: 1, g: 1, b: 1, a: 1}
     lineText: 'Mag aanyaya ako para sa salusalo sa lawa.
 
 '
     voiceClip: {fileID: 8300000, guid: 3e2720af8e276d14a99063033b599338, type: 3}
   - speakerName: CRISOSTOMO
+    speakerNameColor: {r: 1, g: 1, b: 1, a: 1}
     lineText: " Inaanyayahan ko pa rin si Padre Salvi\u2026 (huminga ng malalim)"
     voiceClip: {fileID: 8300000, guid: 8960c8cb5599a4d4ca347c13056655c5, type: 3}
   - speakerName: CRISOSTOMO
+    speakerNameColor: {r: 1, g: 1, b: 1, a: 1}
     lineText: Gusto kong makita kung anong mukha niya sa harap ng bayan.
     voiceClip: {fileID: 8300000, guid: 0fe2e03c9b206784fbacd1b72be77d95, type: 3}
   repeatable: 1
@@ -353975,6 +354007,7 @@ MonoBehaviour:
   overrideDuration: 0
   playOnce: 1
   speakerName: 
+  speakerNameColor: {r: 1, g: 1, b: 1, a: 1}
   triggerRunTutorial: 0
 --- !u!1001 &1502358756
 PrefabInstance:
@@ -407754,6 +407787,7 @@ MonoBehaviour:
   overrideDuration: 0
   playOnce: 1
   speakerName: 
+  speakerNameColor: {r: 1, g: 1, b: 1, a: 1}
   triggerRunTutorial: 0
 --- !u!1 &1670189631
 GameObject:
@@ -437449,9 +437483,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueLines:
   - speakerName: NPC 4
+    speakerNameColor: {r: 1, g: 1, b: 1, a: 1}
     lineText: Ginoo, salamat po sa may kapal at kayo'y ligtas ni Elias.
     voiceClip: {fileID: 0}
   - speakerName: CRISOSTOMO
+    speakerNameColor: {r: 1, g: 1, b: 1, a: 1}
     lineText: Salamat po.
     voiceClip: {fileID: 0}
   repeatable: 0
@@ -439016,15 +439052,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueLines:
   - speakerName: CRISOSTOMO IBARRA
+    speakerNameColor: {r: 1, g: 1, b: 1, a: 1}
     lineText: Maestro, inaanyayahan ko kayo ngayon.
     voiceClip: {fileID: 0}
   - speakerName: NPC
+    speakerNameColor: {r: 1, g: 1, b: 1, a: 1}
     lineText: Ano ang okasyon?
     voiceClip: {fileID: 0}
   - speakerName: CRISOSTOMO IBARRA
+    speakerNameColor: {r: 1, g: 1, b: 1, a: 1}
     lineText: Pagkikita sa lawing lumot, salu-salo kasama si Maria Clara.
     voiceClip: {fileID: 0}
   - speakerName: NPC
+    speakerNameColor: {r: 1, g: 1, b: 1, a: 1}
     lineText: "Salamat, Se\xF1or. Sasama ako."
     voiceClip: {fileID: 0}
   repeatable: 1
@@ -446270,12 +446310,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueLines:
   - speakerName: CRISOSTOMO IBARRA
+    speakerNameColor: {r: 1, g: 1, b: 1, a: 1}
     lineText: "Kaibigan, inaanyayahan kitang sumama.\r\n\r"
     voiceClip: {fileID: 0}
   - speakerName: NPC
+    speakerNameColor: {r: 1, g: 1, b: 1, a: 1}
     lineText: "Saan po, Se\xF1or Ibarra?\r\n\r"
     voiceClip: {fileID: 0}
   - speakerName: CRISOSTOMO IBARRA
+    speakerNameColor: {r: 1, g: 1, b: 1, a: 1}
     lineText: 'Sa tapat ng lawing lumot, salu-salo kasama si Maria Clara.
 
 
@@ -446283,6 +446326,7 @@ MonoBehaviour:
 '
     voiceClip: {fileID: 0}
   - speakerName: NPC
+    speakerNameColor: {r: 1, g: 1, b: 1, a: 1}
     lineText: "Sige po Se\xF1or, ako po ay dadalo."
     voiceClip: {fileID: 0}
   repeatable: 1
@@ -446570,6 +446614,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speakerName: CRISOSTOMO
+  speakerNameColor: {r: 1, g: 1, b: 1, a: 1}
   subtitleText: Ano ito.. May natanggap akong sulat mula kay Maria Clara.
   voiceClip: {fileID: 0}
   overrideDuration: 0
@@ -465916,17 +465961,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueLines:
   - speakerName: CRISOSTOMO IBARRA
+    speakerNameColor: {r: 1, g: 1, b: 1, a: 1}
     lineText: 'Manong, samahan mo kami.
 
 '
     voiceClip: {fileID: 0}
   - speakerName: NPC
+    speakerNameColor: {r: 1, g: 1, b: 1, a: 1}
     lineText: "Saan po, Se\xF1or?\r\n"
     voiceClip: {fileID: 0}
   - speakerName: CRISOSTOMO IBARRA
+    speakerNameColor: {r: 1, g: 1, b: 1, a: 1}
     lineText: "Sa tapat ng lawing lumot, may salu-salo kasama si Maria Clara.\r\n\r"
     voiceClip: {fileID: 0}
   - speakerName: NPC
+    speakerNameColor: {r: 1, g: 1, b: 1, a: 1}
     lineText: Opo, darating ako.
     voiceClip: {fileID: 0}
   repeatable: 1
@@ -468731,6 +468780,85 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7731fb860937da340a8aa40ed14d52a0, type: 3}
   m_PrefabInstance: {fileID: 1965286968}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1965604618
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1965604619}
+  - component: {fileID: 1965604621}
+  - component: {fileID: 1965604620}
+  m_Layer: 5
+  m_Name: Text (Legacy) (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1965604619
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1965604618}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 120775625}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -0.000012398, y: 40.9}
+  m_SizeDelta: {x: 160.1539, y: 32.1489}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1965604620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1965604618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: cdda4b0fbde292740b73a95bc9c5af98, type: 3}
+    m_FontSize: 25
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 1
+    m_MaxSize: 300
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: SAN DIEGO
+--- !u!222 &1965604621
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1965604618}
+  m_CullTransparentMesh: 1
 --- !u!1 &1965638050
 GameObject:
   m_ObjectHideFlags: 0
@@ -469080,6 +469208,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueLines:
   - speakerName: NPC 2
+    speakerNameColor: {r: 1, g: 1, b: 1, a: 1}
     lineText: Ginoong Ibarra, ako po'y natutuwa at kayo'y ligtas.
     voiceClip: {fileID: 0}
   repeatable: 0
@@ -488758,6 +488887,7 @@ MonoBehaviour:
   overrideDuration: 0
   playOnce: 1
   speakerName: 
+  speakerNameColor: {r: 1, g: 1, b: 1, a: 1}
   triggerRunTutorial: 0
 --- !u!65 &2028412014
 BoxCollider:
@@ -494201,9 +494331,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueLines:
   - speakerName: CRISOSTOMO
+    speakerNameColor: {r: 1, g: 1, b: 1, a: 1}
     lineText: Salamat sa tapang mo, Elias.
     voiceClip: {fileID: 0}
   - speakerName: ELIAS
+    speakerNameColor: {r: 1, g: 1, b: 1, a: 1}
     lineText: Hindi ko magagawa nang mag-isa.
     voiceClip: {fileID: 0}
   repeatable: 0
