@@ -26,6 +26,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   template:
     color: {r: 0, g: 0, b: 0, a: 1}
+--- !u!114 &-7519182611984639477
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4d683f551d33a84db12bb6fa65573f9, type: 3}
+  m_Name: TextSwitcherClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
+  m_EditorClassIdentifier: 
+  template:
+    color: {r: 0, g: 0, b: 0, a: 1}
+    fontSize: 40
+    text: Garrote?
 --- !u!114 &-7483468340313956546
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1676,9 +1692,9 @@ MonoBehaviour:
   m_Name: TextSwitcherClip
   m_EditorClassIdentifier: 
   template:
-    color: {r: 0, g: 0.14117648, b: 1, a: 1}
+    color: {r: 0, g: 0, b: 0, a: 1}
     fontSize: 50
-    text: CRISOSTOMO
+    text: CRISOSTOMO IBARRA
 --- !u!114 &2464204698897991013
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1948,7 +1964,7 @@ MonoBehaviour:
     m_Start: 25.856530612244892
     m_ClipIn: 0
     m_Asset: {fileID: 8537636002034571385}
-    m_Duration: 3.263265306122456
+    m_Duration: 1.710136054421774
     m_TimeScale: 1
     m_ParentTrack: {fileID: 3099843579870530429}
     m_EaseInDuration: 0
@@ -2145,6 +2161,57 @@ MonoBehaviour:
     m_PostExtrapolationTime: 0
     m_PreExtrapolationTime: 0
     m_DisplayName: TextSwitcherClip
+  - m_Version: 1
+    m_Start: 27.566666666666666
+    m_ClipIn: 0
+    m_Asset: {fileID: -7519182611984639477}
+    m_Duration: 1.5531292517006818
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: 3099843579870530429}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: -1
+    m_BlendOutDuration: -1
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 0
+    m_PreExtrapolationTime: 0
+    m_DisplayName: TextSwitcherClip
   m_Markers:
     m_Objects: []
 --- !u!114 &3114609668994778704
@@ -2160,9 +2227,9 @@ MonoBehaviour:
   m_Name: TextSwitcherClip(Clone)(Clone)(Clone)(Clone)
   m_EditorClassIdentifier: 
   template:
-    color: {r: 0, g: 0.14117648, b: 1, a: 1}
+    color: {r: 0, g: 0, b: 0, a: 1}
     fontSize: 50
-    text: CRISOSTOMO
+    text: CRISOSTOMO IBARRA
 --- !u!114 &3183479882777882994
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2640,9 +2707,9 @@ MonoBehaviour:
   m_Name: TextSwitcherClip(Clone)(Clone)
   m_EditorClassIdentifier: 
   template:
-    color: {r: 0, g: 0.14117648, b: 1, a: 1}
+    color: {r: 0, g: 0, b: 0, a: 1}
     fontSize: 50
-    text: CRISOSTOMO
+    text: CRISOSTOMO IBARRA
 --- !u!114 &6037975151151799971
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2917,7 +2984,7 @@ MonoBehaviour:
   template:
     color: {r: 0, g: 0, b: 0, a: 1}
     fontSize: 40
-    text: "Padre\u2026 Garrote?"
+    text: "Padre\u2026 "
 --- !u!114 &8918057773333819919
 MonoBehaviour:
   m_ObjectHideFlags: 1
