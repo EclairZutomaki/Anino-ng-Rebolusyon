@@ -6438,11 +6438,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueLines:
   - speakerName: 'TINYENTE GUEVERRA  '
-    speakerNameColor: {r: 0, g: 0.9137255, b: 1, a: 1}
+    speakerNameColor: {r: 0, g: 0, b: 0, a: 1}
     lineText: "Ikararangal ka ni Don Rafael. \r\nMaligayang pagbabalik, Crisostomo.\r"
     voiceClip: {fileID: 8300000, guid: 69bda7cc4ea0f944697675f5ae4e8baa, type: 3}
   - speakerName: CRISOSTOMO IBARRA
-    speakerNameColor: {r: 0, g: 0.14117648, b: 1, a: 1}
+    speakerNameColor: {r: 0, g: 0, b: 0, a: 1}
     lineText: "Maraming salamat po, Tinyente.\r\nIkinatutuwa kong muli ko kayong
       makita.\r"
     voiceClip: {fileID: 8300000, guid: 6e2fa086240fab64f85febbe1c0cb900, type: 3}
@@ -12501,16 +12501,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueLines:
   - speakerName: PADRE DAMASO
-    speakerNameColor: {r: 0.39607844, g: 0.18431373, b: 0.015686275, a: 1}
+    speakerNameColor: {r: 0, g: 0, b: 0, a: 1}
     lineText: "Dapat sana\u2019y nagpadala ka muna ng sulat bago ka bumalik."
     voiceClip: {fileID: 8300000, guid: 9b7bfdced687752469f75ee31dd46766, type: 3}
   - speakerName: CRISOSTOMO IBARRA
-    speakerNameColor: {r: 0, g: 0.14117648, b: 1, a: 1}
-    lineText: Patawad po Padre. Nais ko lamang kayong sorpresahin. Wala po akong
+    speakerNameColor: {r: 0, g: 0, b: 0, a: 1}
+    lineText: Patawad po padre. Nais ko lamang kayong sorpresahin. Wala po akong
       dalang masama, pawang mabuting layunin lamang.
     voiceClip: {fileID: 8300000, guid: df012025e46049045aabf49b2e891277, type: 3}
   - speakerName: PADRE DAMASO
-    speakerNameColor: {r: 0.39607844, g: 0.18431373, b: 0.015686275, a: 1}
+    speakerNameColor: {r: 0, g: 0, b: 0, a: 1}
     lineText: Hmmmp!
     voiceClip: {fileID: 8300000, guid: 4647399860cd429458ee47e8f6f6bc9d, type: 3}
   repeatable: 1
@@ -94217,6 +94217,7 @@ Transform:
   m_Children:
   - {fileID: 756390118}
   - {fileID: 307417966}
+  - {fileID: 1722266843}
   - {fileID: 795791898}
   - {fileID: 1073853713}
   - {fileID: 551552106}
@@ -131772,6 +131773,139 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1720510475}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1722266842
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1722266843}
+  - component: {fileID: 1722266847}
+  - component: {fileID: 1722266846}
+  - component: {fileID: 1722266845}
+  - component: {fileID: 1722266844}
+  m_Layer: 0
+  m_Name: Kapitan Tiago (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1722266843
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1722266842}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 39.754, y: 1.5, z: 63.709}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1103143207}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1722266844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1722266842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37902d4e0885eeb42a9ccc1b89b3fdf5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerType: 0
+  triggerKey: 101
+  allowedTags:
+  - Player
+  objectsToToggle:
+  - target: {fileID: 788021621}
+    action: 1
+    showDelay: 0
+    hideDelay: 0
+  startHidden: 0
+  destroyAfterTrigger: 0
+  destroyDelay: 0
+--- !u!135 &1722266845
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1722266842}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &1722266846
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1722266842}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1722266847
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1722266842}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!4 &1722290068 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3447742079981357586, guid: 60b3679027cf60742ac452319ba2dfaf, type: 3}
@@ -140466,7 +140600,7 @@ MonoBehaviour:
   overrideDuration: 0
   playOnce: 1
   speakerName: TENYENTE GUEVARRA
-  speakerNameColor: {r: 0, g: 0.9137255, b: 1, a: 1}
+  speakerNameColor: {r: 0, g: 0, b: 0, a: 1}
   triggerRunTutorial: 0
 --- !u!65 &1801366161
 BoxCollider:
@@ -145829,13 +145963,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueLines:
   - speakerName: KAPITAN TIAGO
-    speakerNameColor: {r: 0.92156863, g: 1, b: 0, a: 1}
-    lineText: "Crisostomo! Lalaki ka na\u2019t tunay na maginoo!"
+    speakerNameColor: {r: 0, g: 0, b: 0, a: 1}
+    lineText: "Ah, Crisostomo! Lalaki ka na\u2019t tunay na maginoo!"
     voiceClip: {fileID: 8300000, guid: 606e360271df4154e9be224ca41d70d0, type: 3}
   - speakerName: CRISOSTOMO IBARRA
-    speakerNameColor: {r: 0, g: 0.14117648, b: 1, a: 1}
-    lineText: Maraming salamat, Kapitan Tiago. Ikinagalakan kong muling makita kayong
-      lahat.
+    speakerNameColor: {r: 0, g: 0, b: 0, a: 1}
+    lineText: "Maraming salamat, Kapitan Tiago. \nIkinagalakan kong muling makita
+      kayong lahat."
     voiceClip: {fileID: 8300000, guid: d875cb4e18a0af44b996ac7cf5179951, type: 3}
   repeatable: 1
   objectsToActivate: []
@@ -174158,7 +174292,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1822278103983143266, guid: 324e55084d361de48b9e6dc421c8b286, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2719222930876616888, guid: 324e55084d361de48b9e6dc421c8b286, type: 3}
       propertyPath: m_SizeDelta.y
@@ -174504,7 +174638,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6536771220378800042, guid: 31724183167fcb940a1798319350ff97, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7824370769376285754, guid: 31724183167fcb940a1798319350ff97, type: 3}
       propertyPath: m_IsActive
