@@ -17,7 +17,7 @@ public class GameOverMiniGame : MonoBehaviour
     public float holdTime = 3f;
 
     [Header("Image Alpha Limit (0–255)")]
-    public float maxImageAlpha = 200f; // Your limit
+    public float maxImageAlpha = 200f;
 
     [Header("Sounds")]
     public AudioSource audioSource;
@@ -34,6 +34,14 @@ public class GameOverMiniGame : MonoBehaviour
     [Header("Trigger Settings")]
     public string playerTag = "Player";
 
+    [Header("⏱ TIMER SETTINGS")]
+    public float startTime = 10f; // 🔥 CHANGE THIS ANYTIME
+    public TMP_Text timerText;
+    public bool startOnTrigger = true;
+
+    private float currentTime;
+    private bool timerRunning = false;
+
     private bool isRunning = false;
     private bool playerInside = false;
 
@@ -47,9 +55,38 @@ public class GameOverMiniGame : MonoBehaviour
 
     void Awake()
     {
-        // Separate images and TMP texts
         images.AddRange(gameOverUI.GetComponentsInChildren<Image>(true));
         texts.AddRange(gameOverUI.GetComponentsInChildren<TMP_Text>(true));
+    }
+
+    void Start()
+    {
+        currentTime = startTime;
+        UpdateTimerUI();
+    }
+
+    void Update()
+    {
+        if (!timerRunning) return;
+
+        currentTime -= Time.deltaTime;
+
+        if (currentTime <= 0)
+        {
+            currentTime = 0;
+            timerRunning = false;
+
+            if (!isRunning)
+                StartCoroutine(GameOverSequence());
+        }
+
+        UpdateTimerUI();
+    }
+
+    void UpdateTimerUI()
+    {
+        if (timerText != null)
+            timerText.text = Mathf.Ceil(currentTime).ToString();
     }
 
     void OnTriggerEnter(Collider other)
@@ -58,8 +95,8 @@ public class GameOverMiniGame : MonoBehaviour
 
         playerInside = true;
 
-        if (!isRunning)
-            StartCoroutine(GameOverSequence());
+        if (startOnTrigger)
+            timerRunning = true;
     }
 
     void OnTriggerExit(Collider other)
@@ -104,14 +141,13 @@ public class GameOverMiniGame : MonoBehaviour
         }
 
         float t = 0f;
-        float imgMax = maxImageAlpha / 255f; // Convert to 0–1
+        float imgMax = maxImageAlpha / 255f;
 
         while (t < duration)
         {
             t += Time.unscaledDeltaTime;
             float lerp = Mathf.Lerp(start, end, t / duration);
 
-            // Fade images (0 → imgMax)
             foreach (var img in images)
             {
                 if (img == null) continue;
@@ -120,7 +156,6 @@ public class GameOverMiniGame : MonoBehaviour
                 img.color = new Color(c.r, c.g, c.b, targetAlpha);
             }
 
-            // Fade texts full alpha (0 → 1)
             foreach (var txt in texts)
             {
                 if (txt == null) continue;
