@@ -1,94 +1,76 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 [ExecuteAlways]
 public class LightingManager : MonoBehaviour
 {
-    [Header("Scene References")]
-    [SerializeField] private Light directionalLight;
-    [SerializeField] private LightingPreset preset;
+    // Scene References
+    [SerializeField] private Light DirectionalLight;
+    [SerializeField] private LightingPreset Preset;
 
-    [Header("Time Settings")]
-    [SerializeField, Range(0, 24)] private float timeOfDay = 12f;
-    [SerializeField] private float dayDurationInMinutes = 5f; // FULL day = 5 mins
-    [SerializeField] private bool autoTime = true;
+    // Time
+    [SerializeField, Range(0, 24)] private float TimeOfDay;
+    [SerializeField] private float dayDurationInMinutes = 5f; // 🔥 FULL day = 5 mins
 
-    private float timeRate;
+    private float timeRate; // how fast time moves
 
     private void Update()
     {
-        if (preset == null)
+        if (Preset == null)
             return;
 
-        // Convert real time to game time
-        if (Application.isPlaying && autoTime)
+        if (Application.isPlaying)
         {
+            // 🔥 Convert real time → game time
             timeRate = 24f / (dayDurationInMinutes * 60f);
-            timeOfDay += Time.deltaTime * timeRate;
-            timeOfDay %= 24f;
 
-            UpdateLighting(timeOfDay / 24f);
+            TimeOfDay += Time.deltaTime * timeRate;
+            TimeOfDay %= 24f;
+
+            UpdateLighting(TimeOfDay / 24f);
         }
         else
         {
-            UpdateLighting(timeOfDay / 24f);
+            UpdateLighting(TimeOfDay / 24f);
         }
     }
 
     private void UpdateLighting(float timePercent)
     {
-        // ?? Ambient + Fog
-        RenderSettings.ambientLight = preset.AmbientColor.Evaluate(timePercent);
-        RenderSettings.fogColor = preset.FogColor.Evaluate(timePercent);
+        // Ambient + Fog
+        RenderSettings.ambientLight = Preset.AmbientColor.Evaluate(timePercent);
+        RenderSettings.fogColor = Preset.FogColor.Evaluate(timePercent);
 
-        if (directionalLight != null)
+        if (DirectionalLight != null)
         {
-            // ?? Light color
-            directionalLight.color = preset.DirectionalColor.Evaluate(timePercent);
+            DirectionalLight.color = Preset.DirectionalColor.Evaluate(timePercent);
 
-            // ?? Smooth realistic sun rotation
-            float sunAngle = timePercent * 360f;
-
-            directionalLight.transform.rotation = Quaternion.Euler(
-                new Vector3(sunAngle - 90f, 170f, 0)
+            DirectionalLight.transform.localRotation = Quaternion.Euler(
+                new Vector3((timePercent * 360f) - 90f, 170f, 0)
             );
-
-            // ?? Optional: disable light at night
-            directionalLight.intensity = Mathf.Clamp01(Mathf.Cos(timePercent * Mathf.PI * 2f) * 1.2f);
         }
     }
 
     private void OnValidate()
     {
-        if (directionalLight != null)
+        if (DirectionalLight != null)
             return;
 
         if (RenderSettings.sun != null)
         {
-            directionalLight = RenderSettings.sun;
+            DirectionalLight = RenderSettings.sun;
         }
         else
         {
-            Light[] lights = GameObject.FindObjectsByType<Light>(FindObjectsSortMode.None);
+            Light[] lights = FindObjectsByType<Light>(FindObjectsSortMode.None);
 
             foreach (Light light in lights)
             {
                 if (light.type == LightType.Directional)
                 {
-                    directionalLight = light;
+                    DirectionalLight = light;
                     return;
                 }
             }
         }
-    }
-
-    // ?? OPTIONAL: Control from other scripts
-    public void SetTime(float hour)
-    {
-        timeOfDay = hour;
-    }
-
-    public float GetTime()
-    {
-        return timeOfDay;
     }
 }
