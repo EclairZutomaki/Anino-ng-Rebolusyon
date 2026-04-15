@@ -15358,6 +15358,7 @@ MonoBehaviour:
   playCutscene: 1
   timelineDirector: {fileID: 849748290}
   playCutsceneOnce: 1
+  allowRetriggerInsideTrigger: 0
 --- !u!1001 &224752977
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -80909,7 +80910,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &968098205
 RectTransform:
   m_ObjectHideFlags: 0
@@ -82209,6 +82210,7 @@ MonoBehaviour:
   playCutscene: 0
   timelineDirector: {fileID: 0}
   playCutsceneOnce: 0
+  allowRetriggerInsideTrigger: 0
 --- !u!4 &972123901 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3447742079981357586, guid: 63d70ec7ef0794c4bb1829a48d9db12c, type: 3}
@@ -83822,7 +83824,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: Hanapin niyo lang ako ng tatalong beses dito sa lugar na ito
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -83831,8 +83833,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 2667577343
-  m_fontColor: {r: 1, g: 1, b: 1, a: 0}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -167694,23 +167696,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueLines:
   - speakerName: BATA
-    speakerNameColor: {r: 1, g: 1, b: 1, a: 1}
+    speakerNameColor: {r: 0, g: 0, b: 0, a: 1}
     lineText: Senior! Senior!
     voiceClip: {fileID: 0}
   - speakerName: CRISOSTOMO
-    speakerNameColor: {r: 1, g: 1, b: 1, a: 1}
+    speakerNameColor: {r: 0, g: 0, b: 0, a: 1}
     lineText: Bakit bata, ano meron?
     voiceClip: {fileID: 0}
   - speakerName: BATA
-    speakerNameColor: {r: 1, g: 1, b: 1, a: 1}
+    speakerNameColor: {r: 0, g: 0, b: 0, a: 1}
     lineText: Pwede ko po ba kayo makalaro sa tagu-taguan.
     voiceClip: {fileID: 0}
   - speakerName: CRISOSTOMO
-    speakerNameColor: {r: 1, g: 1, b: 1, a: 1}
+    speakerNameColor: {r: 0, g: 0, b: 0, a: 1}
     lineText: Oh Sige Bata.
     voiceClip: {fileID: 0}
   - speakerName: BATA
-    speakerNameColor: {r: 1, g: 1, b: 1, a: 1}
+    speakerNameColor: {r: 0, g: 0, b: 0, a: 1}
     lineText: Sabihan niyo nalang po ako kung handa na kayo.
     voiceClip: {fileID: 0}
   repeatable: 1
@@ -181987,31 +181989,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueLines:
   - speakerName: MANONG
-    speakerNameColor: {r: 1, g: 1, b: 1, a: 1}
+    speakerNameColor: {r: 0, g: 0, b: 0, a: 1}
     lineText: Ughhh....
     voiceClip: {fileID: 0}
   - speakerName: CRISOSTOMO
-    speakerNameColor: {r: 1, g: 1, b: 1, a: 1}
+    speakerNameColor: {r: 0, g: 0, b: 0, a: 1}
     lineText: Manong, anong nangyari?
     voiceClip: {fileID: 0}
   - speakerName: MANONG
-    speakerNameColor: {r: 1, g: 1, b: 1, a: 1}
+    speakerNameColor: {r: 0, g: 0, b: 0, a: 1}
     lineText: May sira po ang gulong ng aking kalesa Senior.
     voiceClip: {fileID: 0}
   - speakerName: MANONG
-    speakerNameColor: {r: 1, g: 1, b: 1, a: 1}
+    speakerNameColor: {r: 0, g: 0, b: 0, a: 1}
     lineText: Kailangan ko ng lupid at kahoy para maiayos ito.
     voiceClip: {fileID: 0}
   - speakerName: CRISOSTOMO
-    speakerNameColor: {r: 1, g: 1, b: 1, a: 1}
+    speakerNameColor: {r: 0, g: 0, b: 0, a: 1}
     lineText: Kung ganon, hayaan niyo na po ako maghanap sa mga iyon.
     voiceClip: {fileID: 0}
   - speakerName: MANONG
-    speakerNameColor: {r: 1, g: 1, b: 1, a: 1}
+    speakerNameColor: {r: 0, g: 0, b: 0, a: 1}
     lineText: Nako Senior hindi na po, mag papatawag nalang po ako ng karpintero.
     voiceClip: {fileID: 0}
   - speakerName: CRISOTOMO
-    speakerNameColor: {r: 1, g: 1, b: 1, a: 1}
+    speakerNameColor: {r: 0, g: 0, b: 0, a: 1}
     lineText: Hayaan niyo na po ako manong, masaya po ako nakaktulong sa iba.
     voiceClip: {fileID: 0}
   repeatable: 0
