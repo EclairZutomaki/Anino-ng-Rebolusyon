@@ -2,22 +2,38 @@ using UnityEngine;
 
 public class PaperCollect : MonoBehaviour
 {
+    [Header("Paper Settings")]
     public string paperID;
-    private bool playerNear = false;
 
     [Header("UI")]
-    public PaperCollectorUI paperUI; // drag your UI panel here
+    public PaperCollectorUI paperUI;
 
-    void Start()
+    private bool playerNear = false;
+
+    private const string PaperCountKey = "CollectedPaperCount";
+
+    private void Start()
     {
-        // Check if already collected
+        if (string.IsNullOrEmpty(paperID))
+        {
+            Debug.LogError("PaperCollect: Missing paperID on " + gameObject.name);
+            return;
+        }
+
+        // Hide paper if already collected
         if (PlayerPrefs.GetInt(paperID, 0) == 1)
         {
             gameObject.SetActive(false);
+            return;
+        }
+
+        if (paperUI == null)
+        {
+            Debug.LogWarning("PaperCollect: paperUI is not assigned on " + gameObject.name);
         }
     }
 
-    void Update()
+    private void Update()
     {
         if (playerNear && Input.GetKeyDown(KeyCode.E))
         {
@@ -25,51 +41,52 @@ public class PaperCollect : MonoBehaviour
         }
     }
 
-    void CollectPaper()
+    private void CollectPaper()
     {
+        // Prevent duplicate collection
+        if (PlayerPrefs.GetInt(paperID, 0) == 1)
+        {
+            Debug.Log("Paper already collected: " + paperID);
+            return;
+        }
+
         // Save this paper as collected
         PlayerPrefs.SetInt(paperID, 1);
+
+        // Increase total paper count
+        int currentCount = PlayerPrefs.GetInt(PaperCountKey, 0);
+        currentCount++;
+        PlayerPrefs.SetInt(PaperCountKey, currentCount);
+
         PlayerPrefs.Save();
 
-        Debug.Log("Collected: " + paperID);
-
-        // Count ALL collected papers
-        int totalCollected = CountCollectedPapers();
+        Debug.Log("Collected paper: " + paperID);
+        Debug.Log("Total collected papers: " + currentCount);
 
         // Update UI
         if (paperUI != null)
         {
-            paperUI.SetPaperCount(totalCollected);
+            paperUI.SetPaperCount(currentCount);
         }
 
+        // Hide collected paper
         gameObject.SetActive(false);
-    }
-
-    int CountCollectedPapers()
-    {
-        // Find ALL PaperCollect objects in scene
-        PaperCollect[] allPapers = FindObjectsByType<PaperCollect>(FindObjectsSortMode.None);
-
-        int count = 0;
-
-        foreach (var paper in allPapers)
-        {
-            if (PlayerPrefs.GetInt(paper.paperID, 0) == 1)
-                count++;
-        }
-
-        return count;
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
+        {
             playerNear = true;
+            Debug.Log("Player near paper: " + paperID);
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))
+        {
             playerNear = false;
+        }
     }
 }
