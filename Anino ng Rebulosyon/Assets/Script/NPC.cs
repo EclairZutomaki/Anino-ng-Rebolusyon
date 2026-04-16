@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.SceneManagement;
 using System.Collections;
 #if ENABLE_INPUT_SYSTEM
 using UnityEngine.InputSystem;
@@ -22,6 +21,8 @@ public class NPC : MonoBehaviour
     [Header("Scene Change (Optional)")]
     [Tooltip("Leave empty if you do NOT want to switch scenes.")]
     public string sceneToLoad = "";
+    [Tooltip("Optional loading screen background for this NPC scene change.")]
+    public Sprite loadingBackground;
 
     private bool playerInRange = false;
     private DialogueManager dialogueManager;
@@ -35,6 +36,11 @@ public class NPC : MonoBehaviour
         if (dialogueManager == null)
         {
             Debug.LogError("DialogueManager not found in the scene!");
+        }
+
+        if (!string.IsNullOrEmpty(sceneToLoad) && SceneLoadingUI.Instance == null)
+        {
+            Debug.LogWarning("SceneLoadingUI not found in the scene! Scene changes will not show a loading screen.");
         }
     }
 
@@ -65,18 +71,39 @@ public class NPC : MonoBehaviour
 
         yield return new WaitUntil(() => dialogueManager.isDialogueFinished);
 
-        if (activationDelay > 0)
+        if (activationDelay > 0f)
             yield return new WaitForSeconds(activationDelay);
 
-        foreach (var obj in objectsToActivate)
-            if (obj != null) obj.SetActive(true);
+        if (objectsToActivate != null)
+        {
+            foreach (GameObject obj in objectsToActivate)
+            {
+                if (obj != null)
+                    obj.SetActive(true);
+            }
+        }
 
-        foreach (var obj in objectsToHide)
-            if (obj != null) obj.SetActive(false);
+        if (objectsToHide != null)
+        {
+            foreach (GameObject obj in objectsToHide)
+            {
+                if (obj != null)
+                    obj.SetActive(false);
+            }
+        }
 
         if (!string.IsNullOrEmpty(sceneToLoad))
         {
-            SceneManager.LoadScene(sceneToLoad);
+            if (SceneLoadingUI.Instance != null)
+            {
+                SceneLoadingUI.Instance.LoadScene(sceneToLoad, loadingBackground);
+            }
+            else
+            {
+                Debug.LogWarning("SceneLoadingUI missing. Loading scene without loading screen.");
+                UnityEngine.SceneManagement.SceneManager.LoadScene(sceneToLoad);
+            }
+
             yield break;
         }
 
