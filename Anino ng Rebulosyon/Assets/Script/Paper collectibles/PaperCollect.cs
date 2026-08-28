@@ -8,6 +8,9 @@ public class PaperCollect : MonoBehaviour
     [Header("UI")]
     public PaperCollectorUI paperUI;
 
+    [Header("Interaction UI")]
+    public GameObject interactUIPanel;
+
     private bool playerNear = false;
 
     private const string PaperCountKey = "CollectedPaperCount";
@@ -48,6 +51,12 @@ public class PaperCollect : MonoBehaviour
         {
             Debug.Log("Paper already collected: " + paperID);
             return;
+        }
+
+        // Hide the interaction UI when the paper is collected
+        if (interactUIPanel != null)
+        {
+            interactUIPanel.SetActive(false);
         }
 
         // Save this paper as collected
